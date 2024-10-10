@@ -1,0 +1,53 @@
+Changelog
+
+09/09 
+- Start a project about the population dietary consumption markers
+- Using CRISP-DM methodoloagy
+- Data from basedosdados.org
+- Reading about the website and how they use BigQuery and PowerBI
+- Acessing the data with BigQuery
+
+12/09
+- Decided I'm going with Olympics data (tabela tá incompleta, trocar...)
+- Created a view in BigQuery
+- Now I'm going to add 2024 olympics data to this data set
+
+13/09 
+- It's going to be a Sleep Health analysis
+- Sleep quality by age graph, sleep quality by gender and sleep quality by
+
+16/09
+- Since this was a small sample, I didn't really thought about using much of DAX because it wouldn't be a problem for PowerBI to perform the calculations, I tried to focus more on working on the key visuals
+- Created filters
+- graphs
+
+17
+- conditional formatting on tables, bed time and wake up time
+- 
+
+
+23/09
+- Created a column to calculate total sleep time
+- created a card with the average sleep quality
+- average daily steps as a gauge
+- average burned calories also as a gauge
+- average age as a card
+- disposition of the visualizations
+
+24/09
+- added a clear filter option
+- created a slicer for age range
+- cleaned a little bit of the format
+
+26/09
+- cleaned the gridlines
+- organized position of vis
+- started working on descriptive 
+
+27/09
+- worked on descriptive part
+- created a Sleep Quality Slicer
+
+
+
+
