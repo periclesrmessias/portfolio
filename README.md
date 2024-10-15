@@ -39,35 +39,18 @@ Atualmente estou trabalhando em dois projetos:
 <br/>
 
 <!-- Skills -->
+## Habilidades Técnicas
+
 ### Habilidades Técnicas
 
-### Linguagens de Programação
-- Python
-- SQL
+- **Linguagens de Programação**: Python, SQL
+- **Banco de Dados**: SQLite, BigQuery
+- **Ferramentas de Visualização de Dados**: Power BI, DBeaver
+- **Ambientes de Desenvolvimento**: VSCode
+- **Controle de Versão**: Git, GitHub
+- **Produtividade e Ferramentas de Colaboração**: Google Workspace, Microsoft Office 365
+- **Habilidades Linguísticas**: Inglês (autodidata)
 
-# Banco de Dados
-- **SQLite**
-- **BigQuery**
-
-# Ferramentas de Visualização de Dados
-- **Power BI**
-- **DBeaver**
-
-# Desenvolvimento e Colaboração
-- **Ambientes de Desenvolvimento**
-  - VSCode
-- **Contêineres e Virtualização**
-  - Docker
-- **Controle de Versão**
-  - Git
-  - GitHub
-
-# Produtividade e Ferramentas de Colaboração
-- **Google Workspace**
-- **Microsoft Office 365**
-
-# Habilidades Linguísticas
-- **Inglês (autodidata)**
 
 
 
