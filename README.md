@@ -41,7 +41,7 @@ Atualmente estou trabalhando em dois projetos:
 <!-- Skills -->
 ### Habilidades Técnicas
 
-# Linguagens de Programação
+### Linguagens de Programação
 - Python
 - SQL
 
