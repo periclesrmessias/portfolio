@@ -39,9 +39,6 @@ Atualmente estou trabalhando em dois projetos:
 <br/>
 
 <!-- Skills -->
-## Habilidades Técnicas
-
-### Habilidades Técnicas
 
 - **Linguagens de Programação**: Python, SQL
 - **Banco de Dados**: SQLite, BigQuery
