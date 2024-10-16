@@ -16,7 +16,7 @@ Atualmente estou trabalhando em dois projetos:
 
 ### Meus Projetos:
 
-[Adoções de Animais em Belo Horizonte](/assets/IMG_9838.JPEG)
+![Adoções de Animais em Belo Horizonte](/assets/IMG_9838.JPEG)
 
 [Gerenciamento de Estoque em ONG]
 
