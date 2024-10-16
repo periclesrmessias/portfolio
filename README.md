@@ -1,23 +1,24 @@
-# Pericles Messias 👋🏼
+# Pericles Messias 
 
-Profissional de análise de dados em início de carreira, apaixonado por conhecimento e ciência, atualmente criando projetos práticos analisando adoções de animais e gerenciamento de estoques em uma ONG de Belo Horizonte. Em busca de oportunidades para desenvolver e aprimorar habilidades essenciais na área de dados, contribuindo para o sucesso de empresas e organizações por meio de análises detalhadas, métodos estatísticos e, no futuro, modelos de inteligência artificial.
+Profissional de análise de dados em início de carreira,  com experiência em criação e anotação de relatórios e fortes habilidades analíticas e atenção a detalhes, evidenciadas não somente por trabalhos posterios, mas tambem por habitos diarios de coleta de dados pessoais em diferentes amvitos. Altamente resiliente e disciplinado,  em busca de oportunidades para desenvolver e aprimorar habilidades essenciais na área de dados e resolver problemas de negocios utilizando estrategias baseadas em dado, contribuindo para o sucesso de empresas e organizações por meio de análises detalhadas, métodos estatísticos e, futuramente, modelos de inteligência artificial.
 
-Conecte-se comigo no LinkedIn: [Pericles Messias](https://www.linkedin.com/in/pericles-messias)
+## Expwriencia Profissional
 
-### Foco Atual:
+aplicativos de entrega
 
-Atualmente estou trabalhando em dois projetos: 
+- Possuo uma alta taxa de avaliacões em aplixaitovs de entrega: apeoximadamente mais de 200 entregas por aplicativo, dentre essas mais de 45% sao avaliacoes nota 5. X acima da media de mercado, demonstrando minha capacidade de ótimo atendimento ao cliente, sempre reqlizando meu trabalho com muita atwncao e excelencia. 
 
-[Adoções de Animais em Belo Horizonte] auxiliando a ONG de animais [Bastadotar](https://www.instagram.com/bast.adotar) a compreender melhor o processo de adoção de animais, envolvendo analisar quais animais tendem a ser mais adotados, explorando principalmente aspectos genéticos, temperamentais e sociais das famílias adotantes. 
+Assistencia Veterinaria 
 
-[Gerenciamento de Estoque em ONG] também na [Bastadotar](https://www.instagram.com/bast.adotar), controlando o estoque de insumos, em busca de prever com maior precisão em qual momento há uma maior demanda por medicações, quais medicações são mais utilizadas, qual o maior gasto com medicação dentre outros aspectos que possam auxiliar na economia e no melhor aproveitamento de doações de medicamentos e no gasto com os animais.
-
-
+Apesar de ainda nao ter atuado em um cargo especifico da atea de tecnologia ku de dados. minhas  experiencias passadas, possuem algumas funcoes relacionadas às funcoes de uma posicao em dados, o que me fazem estar preparaso para me adaptar a uma real funcao em um cargo de dados. 
 
 ### Meus Projetos:
 
 [Adoções de Animais em Belo Horizonte](/assets/IMG_9838.JPEG)
 
+
+
+meu ponto fraco: Tempo, eu preciso me orgarnizar pra realizR as atividaxes propostad em um. tempo melhor. Cronogramas!
 
 
 [Gerenciamento de Estoque em ONG]
