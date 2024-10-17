@@ -14,9 +14,11 @@ Minha trajetória inclui passagens por Educação Física e Psicologia, o que me
 ### Entregador de Aplicativo
 - Experiência: Realizou mais de 200 entregas, com 63% delas avaliadas com nota máxima de 5 estrelas.
 - Habilidades desenvolvidas: Demonstração de organização, pontualidade, atenção aos detalhes, comunicação e resolução de problemas.
+  
 ### Assistente Veterinário
 - Experiência: Gerenciou registros de vacinação e censo populacional dos animais; elaborou relatórios diários; controlou o estoque de suprimentos.
 - Habilidades desenvolvidas: Capacidade de trabalhar com dados, comunicação eficaz e organização.
+  
 ### Assistente de Cotação
 - Experiência: Criação e gerenciamento de planilhas para controle de estoque e análise de reposição; auxílio na gestão financeira, contribuindo para economias.
 - Habilidades desenvolvidas: Análise financeira e gestão de suprimentos.
