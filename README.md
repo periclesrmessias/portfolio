@@ -8,8 +8,6 @@ Minha trajetória inclui passagens por Educação Física e Psicologia, o que me
 
 ### [Análise Descritiva de Evasão de Funcionários da IBM](https://github.com/periclesrmessias/ibm-employee-attrition)
 
-[![Análise Descritiva de Evasão de Funcionários da IBM](https://github.com/periclesrmessias/portfolio/blob/main/assets/evasao.jpeg)](https://github.com/periclesrmessias/ibm-employee-attrition)
-
 ### [Dashboard de Análise do Sono](https://github.com/periclesrmessias/sleep-quality-statistics)
 
 ## Experiência Profissional
