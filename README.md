@@ -29,3 +29,23 @@ Minha trajetória inclui passagens por Educação Física e Psicologia, o que me
 - Habilidades desenvolvidas: Análise financeira e gestão de suprimentos.
 
 Embora ainda não tenha experiência direta na área de dados, tenho experiências relacionadas e estou constantemente me especializando e aprimorando minhas habilidades, enquanto busco uma oportunidade para atuar na área.
+
+## Habilidades
+
+<div style="display: inline_block">
+  <img align="center" src="https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=blue" />
+  <img align="center" src="https://img.shields.io/badge/BigQuery-F9AB00?style=flat&logo=googlecloud&logoColor=white" />
+  <img align="center" src="https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" />
+  <img align="center" src="https://img.shields.io/badge/VSCode-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+  <img align="center" src="https://img.shields.io/badge/Power_BI-F2C94C?style=flat&logo=powerbi&logoColor=black" />
+  <img align="center" src="https://img.shields.io/badge/Google_Workspace-4285F4?style=flat&logo=google&logoColor=white" />
+  <img align="center" src="https://img.shields.io/badge/Microsoft_Office_365-0078D4?style=flat&logo=microsoft&logoColor=white" />
+</div>
+
+- **Linguagens de Programação**: Python, SQL
+- **Banco de Dados**: SQLite, BigQuery
+- **Ferramentas de Visualização de Dados**: Power BI, DBeaver
+- **Ambientes de Desenvolvimento**: VSCode
+- **Controle de Versão**: Git, GitHub
+- **Produtividade e Colaboração**: Google Workspace, Microsoft Office 365
+- **Idiomas**: Inglês (fluente e autodidata)
