@@ -28,7 +28,7 @@ Minha trajetória inclui passagens por Educação Física e Psicologia, o que me
 - Experiência: Criação e gerenciamento de planilhas para controle de estoque e análise de reposição; auxílio na gestão financeira, contribuindo para economias.
 - Habilidades desenvolvidas: Análise financeira e gestão de suprimentos.
 
-Embora ainda não tenha experiência direta na área de dados, tenho experiências relacionadas e estou constantemente me especializando e aprimorando minhas habilidades, enquanto busco uma oportunidade para atuar na área.
+Embora ainda não tenha experiência direta na área de dados, possuo experiências relacionadas e estou constantemente me especializando e aprimorando minhas habilidades, enquanto busco uma oportunidade para atuar na área.
 
 ## Habilidades
 
