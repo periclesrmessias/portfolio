@@ -6,9 +6,9 @@ Minha trajetória inclui passagens por Educação Física e Psicologia, o que me
 
 ## Projetos
 
-### [Adoções de animais em Belo Horizonte](https://github.com/periclesrmessias/bastadotar/tree/main/animal-adoptions-in-belo-horizonte)
+### [Adoções de animais em Belo Horizonte (Em Desenvolvimento)](https://github.com/periclesrmessias/bastadotar/tree/main/animal-adoptions-in-belo-horizonte)
 
-### [Gerenciamento de Estoque da ONG Bastadotar](https://github.com/periclesrmessias/bastadotar/tree/main/ngo-stock-management)
+### [Gerenciamento de Estoque da ONG Bastadotar (Em Desenvolvimento)](https://github.com/periclesrmessias/bastadotar/tree/main/ngo-stock-management)
 
 ### [Análise Descritiva de Evasão de Funcionários da IBM](https://github.com/periclesrmessias/ibm-employee-attrition)
 
