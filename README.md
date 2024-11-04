@@ -42,6 +42,7 @@ Embora ainda não tenha experiência direta na área de dados, possuo experiênc
   <img align="center" src="https://img.shields.io/badge/Microsoft_Office_365-0078D4?style=flat&logo=microsoft&logoColor=white" />
 </div>
 
+
 - **Linguagens de Programação**: Python, SQL
 - **Banco de Dados**: SQLite, BigQuery
 - **Ferramentas de Visualização de Dados**: Power BI, DBeaver
