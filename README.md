@@ -1,6 +1,6 @@
 # Pericles Messias
 
-Sou um profissional de análise de dados em início de carreira, com experiência na criação de relatórios e forte atenção aos detalhes, desenvolvida através de projetos práticos e hábitos pessoais de coleta e análise de dados. Tenho trabalhado em projetos como a análise de adoções de animais e o gerenciamento de estoques em uma ONG, utilizando ferramentas como Power BI e Excel.
+Sou um profissional de análise de dados em início de carreira, com experiência na criação de relatórios e forte atenção a detalhes, desenvolvida através de projetos práticos e hábitos pessoais de coleta e análise de dados. Tenho trabalhado em projetos como a análise de adoções de animais e o gerenciamento de estoques em uma ONG, utilizando ferramentas como Power BI e Excel.
 
 Minha trajetória inclui passagens por Educação Física e Psicologia, o que me trouxe uma compreensão única do comportamento humano, complementando minhas habilidades analíticas. Atualmente, estou focado em desenvolver soluções de dados para resolver problemas de negócios e busco uma oportunidade de emprego na área de análise de dados que me permita financiar meus estudos e aprimorar meu conhecimento. Meu objetivo é contribuir para o sucesso de empresas e organizações através de análises detalhadas e, no futuro, modelos de inteligência artificial.
 
