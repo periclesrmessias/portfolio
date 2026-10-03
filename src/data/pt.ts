@@ -11,7 +11,7 @@ export const PT: Conteudo = {
   resumo:
     "Analista de Dados entre Analytics/BI, inteligência de mercado e automação. Acompanho um funil de R$ 3,5 bilhões na Superus Engenharia — da camada SQL no CRM ao reporting que a diretoria usa para priorizar.",
   cargo: "Analista de Inteligência de Mercado",
-  cargosAlvo: ["Analista de Dados", "Analista de BI", "Analytics Engineer", "Inteligência de Mercado"],
+  areasFoco: ["Analista de Dados", "Analista de BI", "Analytics Engineer", "Inteligência de Mercado"],
 
   kpis: [
     {
@@ -352,7 +352,7 @@ export const PT: Conteudo = {
 
   contato: {
     eyebrow: "Contato",
-    titulo: "Tem uma vaga de dados em que esse perfil se encaixa?",
+    titulo: "Vamos conversar sobre dados?",
     apoio: "Respondo rápido no LinkedIn e por e-mail. Se quiser ver código antes de conversar, o GitHub está aberto.",
   },
 
@@ -368,8 +368,7 @@ export const PT: Conteudo = {
       contato: "Contato",
     },
     eixos: { dados: "Analytics & BI", engenharia: "Engenharia de Dados", negocio: "Inteligência de Negócio" },
-    disponivel: "Aberto a novas oportunidades",
-    buscoPosicoes: "Busco posições de",
+    areasDeAtuacao: "Atuo como",
     verProjetos: "Ver os projetos",
     papelAtual: "Analista de Inteligência de Mercado · Superus Engenharia",
     formacaoEmCurso: "Tecnólogo em Ciência de Dados em curso",

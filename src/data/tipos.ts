@@ -78,8 +78,7 @@ export interface Rotulos {
   links: string;
   secoes: Record<"inicio" | "trajetoria" | "projetos" | "stack" | "formacao" | "contato", string>;
   eixos: Record<Eixo, string>;
-  disponivel: string;
-  buscoPosicoes: string;
+  areasDeAtuacao: string;
   verProjetos: string;
   papelAtual: string;
   formacaoEmCurso: string;
@@ -108,7 +107,8 @@ export interface Conteudo {
   manchete: string;
   resumo: string;
   cargo: string;
-  cargosAlvo: string[];
+  /** Áreas em que atuo — palavras-chave do perfil, não pleito de vaga. */
+  areasFoco: string[];
   kpis: Kpi[];
   trajetoria: { eyebrow: string; titulo: string; apoio: string };
   experiencias: Experiencia[];

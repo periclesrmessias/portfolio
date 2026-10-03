@@ -51,11 +51,8 @@ export function VisaoGeral() {
             <div className="mb-5 flex items-center gap-4">
               <Foto />
               <div className="min-w-0">
-                <Chip tom="ok">
-                  <span className="h-1.5 w-1.5 rounded-full bg-ok" aria-hidden="true" />
-                  {c.rotulos.disponivel}
-                </Chip>
-                <p className="m-0 mt-2 text-sm font-semibold text-text">{PERFIL.nome}</p>
+                <p className="m-0 text-base font-semibold text-text">{PERFIL.nome}</p>
+                <p className="m-0 mt-0.5 text-sm text-text-faint">{c.cargo}</p>
               </div>
             </div>
           </Revelar>
@@ -109,10 +106,10 @@ export function VisaoGeral() {
 
       <Revelar atraso={340}>
         <div className="mt-5 flex flex-wrap items-center gap-2">
-          <span className="text-xs font-medium uppercase tracking-[0.08em] text-text-faint">{c.rotulos.buscoPosicoes}</span>
-          {c.cargosAlvo.map((cargo) => (
-            <Chip key={cargo} tom="contorno">
-              {cargo}
+          <span className="text-xs font-medium uppercase tracking-[0.08em] text-text-faint">{c.rotulos.areasDeAtuacao}</span>
+          {c.areasFoco.map((area) => (
+            <Chip key={area} tom="contorno">
+              {area}
             </Chip>
           ))}
         </div>

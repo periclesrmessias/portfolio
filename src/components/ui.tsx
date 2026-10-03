@@ -185,7 +185,11 @@ export function LanguageToggle({ className }: { className?: string }) {
  * Imagem de projeto. Se o arquivo não existir, a figura inteira sai do fluxo em
  * vez de deixar o ícone de imagem quebrada no cartão: uma captura ausente não
  * pode estragar a página. `loading="lazy"` porque quase todas estão abaixo da
- * dobra, e a proporção fixa reserva o espaço para o layout não pular.
+ * dobra.
+ *
+ * A imagem mantém a própria proporção em vez de entrar numa moldura fixa: são
+ * capturas de dashboard e de console, onde recortar a borda tira justamente o
+ * filtro, o cabeçalho ou a coluna que provam o que está sendo mostrado.
  */
 export function Figura({ src, alt, legenda }: { src: string; alt: string; legenda: string }) {
   const [falhou, definirFalhou] = useState(false);
@@ -200,7 +204,7 @@ export function Figura({ src, alt, legenda }: { src: string; alt: string; legend
         loading="lazy"
         decoding="async"
         onError={() => definirFalhou(true)}
-        className="block aspect-[16/9] w-full object-cover object-top"
+        className="block h-auto w-full"
       />
       <figcaption className="border-t border-border px-3 py-2 text-xs leading-5 text-text-faint">{legenda}</figcaption>
     </figure>

@@ -12,7 +12,7 @@ export const EN: Conteudo = {
   resumo:
     "Data Analyst working across Analytics/BI, market intelligence and automation. I track a BRL 3.5 billion sales pipeline at Superus Engenharia — from the SQL layer in the CRM to the reporting leadership uses to prioritise.",
   cargo: "Market Intelligence Analyst",
-  cargosAlvo: ["Data Analyst", "BI Analyst", "Analytics Engineer", "Market Intelligence"],
+  areasFoco: ["Data Analyst", "BI Analyst", "Analytics Engineer", "Market Intelligence"],
 
   kpis: [
     {
@@ -349,7 +349,7 @@ export const EN: Conteudo = {
 
   contato: {
     eyebrow: "Contact",
-    titulo: "Have a data role this profile fits?",
+    titulo: "Want to talk data?",
     apoio: "I reply quickly on LinkedIn and by e-mail. If you'd rather see code first, GitHub is open.",
   },
 
@@ -365,8 +365,7 @@ export const EN: Conteudo = {
       contato: "Contact",
     },
     eixos: { dados: "Analytics & BI", engenharia: "Data Engineering", negocio: "Business Intelligence" },
-    disponivel: "Open to new opportunities",
-    buscoPosicoes: "Looking for roles in",
+    areasDeAtuacao: "I work as",
     verProjetos: "See the projects",
     papelAtual: "Market Intelligence Analyst · Superus Engenharia",
     formacaoEmCurso: "Data Science degree in progress",
