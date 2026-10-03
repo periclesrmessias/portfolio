@@ -13,10 +13,9 @@ export const PERFIL = {
   manchete: "Transformo dado disperso em decisão comercial.",
   resumo:
     "Analista de Dados atuando entre Analytics/BI, inteligência de mercado e automação. Hoje acompanho um funil comercial de mais de R$ 3,5 bilhões na Superus Engenharia — da camada SQL no CRM até o reporting que a diretoria usa para priorizar negociação.",
-  email: "pericles.messias@superusengenharia.com.br",
+  email: "periclesrmessias@gmail.com",
   github: "https://github.com/periclesrmessias",
-  // TODO: trocar pela URL real do perfil.
-  linkedin: "https://www.linkedin.com/in/periclesrmessias",
+  linkedin: "https://www.linkedin.com/in/pericles-messias/",
   cargosAlvo: [
     "Analista de Dados",
     "Analista de BI",
