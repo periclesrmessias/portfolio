@@ -1,0 +1,117 @@
+/*
+ * Tokens de cor do Life-OS, fonte única da paleta.
+ *
+ * Cada cor é gravada como canais RGB separados por espaço ("36 88 230") e lida
+ * como `rgb(var(--c-x) / <alpha>)`. É esse formato que deixa o Tailwind aplicar
+ * opacidade (`bg-warn/40`) e deixa o SVG dos gráficos usar a mesma cor com
+ * `fill="rgb(var(--c-primary))"`, sem hex duplicado em três lugares como antes
+ * (tailwind.config.js, transitions.css e domainIcons.ts).
+ *
+ * Regra de uso, derivada do storytelling com dados: a interface é neutra e a
+ * cor só aparece onde carrega significado. `primary` destaca o dado que importa
+ * (o dia de hoje, a maior categoria, a série atual); `mark` é o cinza do dado de
+ * contexto; `ok`, `warn` e `danger` dizem bom, atenção e ruim. O botão principal
+ * usa `inverse` justamente para não disputar atenção com o destaque dos gráficos.
+ *
+ * Tema: `html[data-theme="light" | "dark"]`, escrito antes do primeiro render
+ * pelo script de index.html a partir da preferência salva (sistema, claro ou
+ * escuro). Contraste de texto medido contra surface, bg e surface-2: todos os
+ * tokens de texto passam de 4,5:1 nos dois temas.
+ */
+
+:root,
+html[data-theme="light"] {
+  --c-bg: 246 246 243;  /* fundo da página */
+  --c-surface: 255 255 255;  /* cartões e painéis */
+  --c-surface-2: 242 242 238;  /* hover, campos, faixas internas */
+  --c-surface-3: 233 233 228;  /* pressionado e selecionado */
+  --c-border: 229 229 223;  /* divisórias finas */
+  --c-border-strong: 210 210 202;  /* borda de controle e hover */
+  --c-text: 23 23 22;  /* texto principal */
+  --c-text-dim: 81 81 76;  /* texto de apoio */
+  --c-text-faint: 109 109 103;  /* legenda e rótulo (mín. 4,5:1) */
+  --c-inverse: 23 23 22;  /* botão principal (preenchimento) */
+  --c-inverse-hover: 46 46 43;  /* botão principal no hover */
+  --c-inverse-text: 255 255 255;  /* texto sobre o preenchimento invertido */
+  --c-primary: 36 88 230;  /* destaque de dado, foco e seleção */
+  --c-primary-hover: 31 79 209;  /* destaque no hover */
+  --c-primary-active: 26 68 181;  /* destaque pressionado */
+  --c-primary-soft: 235 240 253;  /* fundo de seleção */
+  --c-primary-text: 29 71 196;  /* texto e traço na cor de destaque */
+  --c-mark: 199 199 190;  /* dado de contexto (barras e linhas em cinza) */
+  --c-mark-strong: 163 163 154;  /* referência, média, meta */
+  --c-grid: 237 237 232;  /* grade dos gráficos */
+  --c-ok: 19 122 58;  /* bom, concluído, melhora */
+  --c-ok-soft: 232 244 236;
+  --c-warn: 163 82 7;  /* atenção, em risco */
+  --c-warn-soft: 251 241 226;
+  --c-danger: 200 36 28;  /* erro, atraso, piora (4,9:1 sobre o fundo suave) */
+  --c-danger-soft: 252 235 233;
+  --c-info: 11 106 163;  /* em aberto, aguardando */
+  --c-info-soft: 231 241 248;
+  --c-area-corpo: 15 148 136;  /* corpo e mente */
+  --c-area-carreira: 116 66 230;  /* carreira e dinheiro */
+  --c-area-lazer: 224 97 15;  /* vida e lazer */
+  --c-veu: 23 23 22;  /* cor do véu dos modais */
+  --c-controle: 236 236 231;  /* trilho de abas e segmentos */
+  --c-controle-ativo: 255 255 255;  /* pílula da opção escolhida */
+  --c-humor-1: 194 65 12;  /* escala divergente do humor, 1 a 5 */
+  --c-humor-2: 229 137 77;
+  --c-humor-3: 163 163 154;
+  --c-humor-4: 70 168 114;
+  --c-humor-5: 19 122 58;
+
+  --veu-alpha: 0.34;
+  --sombra-card: 0 1px 2px rgb(23 23 22 / 0.04), 0 1px 1px rgb(23 23 22 / 0.03);
+  --sombra-overlay: 0 0 0 1px rgb(23 23 22 / 0.06), 0 4px 12px -4px rgb(23 23 22 / 0.1), 0 16px 40px -12px rgb(23 23 22 / 0.2);
+  --sombra-pilula: 0 1px 2px rgb(23 23 22 / 0.08), 0 0 0 1px rgb(23 23 22 / 0.05);
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --c-bg: 11 11 10;
+  --c-surface: 20 20 19;
+  --c-surface-2: 28 28 26;
+  --c-surface-3: 38 38 35;
+  --c-border: 40 40 38;
+  --c-border-strong: 58 58 54;
+  --c-text: 237 237 235;
+  --c-text-dim: 169 169 163;
+  --c-text-faint: 141 141 135;
+  --c-inverse: 237 237 235;
+  --c-inverse-hover: 255 255 255;
+  --c-inverse-text: 18 18 17;
+  --c-primary: 109 155 255;
+  --c-primary-hover: 134 173 255;
+  --c-primary-active: 90 138 245;
+  --c-primary-soft: 23 34 56;
+  --c-primary-text: 157 188 255;
+  --c-mark: 70 70 63;
+  --c-mark-strong: 106 106 98;
+  --c-grid: 31 31 29;
+  --c-ok: 76 201 140;
+  --c-ok-soft: 18 38 27;
+  --c-warn: 230 170 69;
+  --c-warn-soft: 41 33 15;
+  --c-danger: 242 113 107;
+  --c-danger-soft: 43 22 20;
+  --c-info: 90 178 236;
+  --c-info-soft: 15 34 48;
+  --c-area-corpo: 52 205 187;
+  --c-area-carreira: 168 141 251;
+  --c-area-lazer: 245 154 85;
+  --c-veu: 0 0 0;
+  --c-controle: 28 28 26;
+  --c-controle-ativo: 46 46 43;
+  --c-humor-1: 240 122 74;
+  --c-humor-2: 238 162 118;
+  --c-humor-3: 141 141 135;
+  --c-humor-4: 108 207 152;
+  --c-humor-5: 63 216 140;
+
+  --veu-alpha: 0.72;
+  --sombra-card: 0 0 0 0 transparent;
+  --sombra-overlay: 0 0 0 1px rgb(255 255 255 / 0.06), 0 16px 48px rgb(0 0 0 / 0.55);
+  --sombra-pilula: 0 0 0 1px rgb(255 255 255 / 0.04);
+  color-scheme: dark;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f6f6f3" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Péricles Messias — Dados, BI e Inteligência de Mercado</title>
+    <meta
+      name="description"
+      content="Analista de Dados e Inteligência de Mercado. Power BI, DAX, SQL (PostgreSQL/Supabase), Python, Airflow e automação com LLMs aplicados à decisão comercial."
+    />
+    <meta name="author" content="Péricles Messias" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Péricles Messias — Dados, BI e Inteligência de Mercado" />
+    <meta
+      property="og:description"
+      content="Funil de R$ 3,5 bi acompanhado, 40+ dashboards em Power BI, camada analítica em SQL e automações com IA generativa."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preload" href="./fonts/geist-variable-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // Tema antes do primeiro quadro, mesma estratégia do Life-OS: sem isso a
+      // página pinta clara e troca para escura quando o React monta.
+      (function () {
+        var preferencia = "sistema";
+        try {
+          preferencia = localStorage.getItem("portfolio:tema") || "sistema";
+        } catch (e) {}
+        var escuro =
+          preferencia === "escuro" ||
+          (preferencia !== "claro" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        document.documentElement.setAttribute("data-theme", escuro ? "dark" : "light");
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", escuro ? "#0b0b0a" : "#f6f6f3");
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 24px; font-family: system-ui, sans-serif">
+        Este portfólio precisa de JavaScript habilitado. Conteúdo também disponível no LinkedIn e no GitHub.
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
