@@ -5,6 +5,7 @@ import { Projetos } from "@/sections/Projetos";
 import { Stack } from "@/sections/Stack";
 import { Formacao } from "@/sections/Formacao";
 import { Contato } from "@/sections/Contato";
+import { IdiomaProvider } from "@/utils/idioma";
 import { useTema } from "@/utils/tema";
 
 export default function App() {
@@ -13,13 +14,15 @@ export default function App() {
   useTema();
 
   return (
-    <Shell>
-      <VisaoGeral />
-      <Trajetoria />
-      <Projetos />
-      <Stack />
-      <Formacao />
-      <Contato />
-    </Shell>
+    <IdiomaProvider>
+      <Shell>
+        <VisaoGeral />
+        <Trajetoria />
+        <Projetos />
+        <Stack />
+        <Formacao />
+        <Contato />
+      </Shell>
+    </IdiomaProvider>
   );
 }

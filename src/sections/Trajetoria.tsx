@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { ChevronDown, TrendingUp } from "lucide-react";
-import { EIXOS, EXPERIENCIAS, LINHA_DO_TEMPO, type Experiencia } from "@/data/perfil";
+import { CORES_EIXO } from "@/data/perfil";
 import { Card, Chip, Revelar, SectionHeader } from "@/components/ui";
+import { useConteudo } from "@/utils/idioma";
 import { cn } from "@/utils/cn";
+import type { Conteudo, Eixo, Experiencia } from "@/data/tipos";
 
-/** Marcador do eixo de atuação: ponto colorido e rótulo. */
-function Eixo({ eixo }: { eixo: keyof typeof EIXOS }) {
-  const { label, ponto } = EIXOS[eixo];
+/** Marcador do eixo de atuação: ponto colorido e rótulo traduzido. */
+function MarcaEixo({ eixo, rotulo }: { eixo: Eixo; rotulo: string }) {
   return (
     <span className="inline-flex items-center gap-1.5 text-xs text-text-faint">
-      <span className={cn("h-1.5 w-1.5 rounded-full", ponto)} aria-hidden="true" />
-      {label}
+      <span className={cn("h-1.5 w-1.5 rounded-full", CORES_EIXO[eixo].ponto)} aria-hidden="true" />
+      {rotulo}
     </span>
   );
 }
@@ -20,7 +21,7 @@ function Eixo({ eixo }: { eixo: keyof typeof EIXOS }) {
  * entregas ficam atrás de um acordeão para a seção não virar um muro de texto —
  * mas continuam no DOM, acessíveis e indexáveis.
  */
-function CartaoExperiencia({ exp, inicial }: { exp: Experiencia; inicial: boolean }) {
+function CartaoExperiencia({ exp, inicial, rotulos }: { exp: Experiencia; inicial: boolean; rotulos: Conteudo["rotulos"] }) {
   const [aberto, definirAberto] = useState(inicial);
   const idPainel = `entregas-${exp.empresa.replace(/\s+/g, "-").toLowerCase()}`;
 
@@ -32,7 +33,7 @@ function CartaoExperiencia({ exp, inicial }: { exp: Experiencia; inicial: boolea
           <p className="m-0 mt-0.5 text-sm text-text-dim">{exp.empresa}</p>
         </div>
         <div className="flex flex-shrink-0 items-center gap-2">
-          {exp.atual && <Chip tom="ok">Atual</Chip>}
+          {exp.atual && <Chip tom="ok">{rotulos.atual}</Chip>}
           <span className="text-sm tabular-nums text-text-faint">{exp.periodo}</span>
         </div>
       </div>
@@ -43,7 +44,7 @@ function CartaoExperiencia({ exp, inicial }: { exp: Experiencia; inicial: boolea
         <div className="mt-5 rounded-md border border-border bg-surface-2/60 p-4">
           <p className="m-0 mb-2.5 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.08em] text-text-faint">
             <TrendingUp size={13} strokeWidth={2.2} aria-hidden="true" />
-            Resultados
+            {rotulos.resultados}
           </p>
           <ul className="m-0 flex list-none flex-col gap-2 p-0">
             {exp.resultados.map((r) => (
@@ -69,7 +70,7 @@ function CartaoExperiencia({ exp, inicial }: { exp: Experiencia; inicial: boolea
           className={cn("transition-transform duration-200", aberto && "rotate-180")}
           aria-hidden="true"
         />
-        {aberto ? "Ocultar entregas" : `O que eu construí (${exp.entregas.length})`}
+        {aberto ? rotulos.ocultarEntregas : rotulos.mostrarEntregas(exp.entregas.length)}
       </button>
 
       <div id={idPainel} hidden={!aberto}>
@@ -85,7 +86,7 @@ function CartaoExperiencia({ exp, inicial }: { exp: Experiencia; inicial: boolea
 
       <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-4">
         {exp.eixos.map((eixo) => (
-          <Eixo key={eixo} eixo={eixo} />
+          <MarcaEixo key={eixo} eixo={eixo} rotulo={rotulos.eixos[eixo]} />
         ))}
       </div>
 
@@ -99,37 +100,36 @@ function CartaoExperiencia({ exp, inicial }: { exp: Experiencia; inicial: boolea
 }
 
 export function Trajetoria() {
+  const c = useConteudo();
+
   return (
     <section id="trajetoria" className="mt-20 scroll-mt-24 md:mt-28">
       <Revelar>
-        <SectionHeader
-          eyebrow="Trajetória"
-          titulo="De pricing em planilha a camada analítica em produção"
-          apoio="Comecei em operações e controles financeiros, passei por análise comercial no varejo e hoje atuo onde o dado encontra a decisão: CRM, SQL, Power BI e inteligência de mercado."
-        />
+        <SectionHeader eyebrow={c.trajetoria.eyebrow} titulo={c.trajetoria.titulo} apoio={c.trajetoria.apoio} />
       </Revelar>
 
       <div className="flex flex-col gap-5">
-        {EXPERIENCIAS.map((exp, i) => (
-          <Revelar key={exp.empresa} atraso={i * 70}>
-            <CartaoExperiencia exp={exp} inicial={i === 0} />
+        {c.experiencias.map((exp, i) => (
+          // A chave inclui o idioma para o acordeão remontar na troca, em vez de
+          // manter aberto um painel cujo rótulo acabou de mudar de língua.
+          <Revelar key={`${c.idioma}-${exp.empresa}`} atraso={i * 70}>
+            <CartaoExperiencia exp={exp} inicial={i === 0} rotulos={c.rotulos} />
           </Revelar>
         ))}
       </div>
 
       <Revelar atraso={120}>
         <Card className="mt-5 p-5 md:p-6">
-          <p className="m-0 mb-5 text-xs font-semibold uppercase tracking-[0.08em] text-text-faint">Linha do tempo</p>
+          <p className="m-0 mb-5 text-xs font-semibold uppercase tracking-[0.08em] text-text-faint">{c.rotulos.linhaDoTempo}</p>
           <ol className="relative m-0 list-none p-0">
-            {/* Trilho contínuo atrás dos marcadores; o último item recorta o
-                trilho com o próprio fundo para a linha não vazar embaixo. */}
+            {/* Trilho contínuo atrás dos marcadores. */}
             <span className="absolute bottom-0 left-[5px] top-2 w-px bg-border" aria-hidden="true" />
-            {LINHA_DO_TEMPO.map((m, i) => (
+            {c.linhaDoTempo.map((m, i) => (
               <li key={`${m.ano}-${m.titulo}`} className={cn("relative pl-6", i > 0 && "mt-5")}>
                 <span
                   className={cn(
                     "absolute left-0 top-[7px] h-[11px] w-[11px] rounded-full border-2 border-surface",
-                    i === LINHA_DO_TEMPO.length - 1 ? "bg-primary" : "bg-mark-strong",
+                    i === c.linhaDoTempo.length - 1 ? "bg-primary" : "bg-mark-strong",
                   )}
                   aria-hidden="true"
                 />

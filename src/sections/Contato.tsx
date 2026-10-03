@@ -1,24 +1,23 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { PERFIL } from "@/data/perfil";
 import { LinkButton, Revelar } from "@/components/ui";
+import { useConteudo } from "@/utils/idioma";
 
 export function Contato() {
+  const c = useConteudo();
+
   return (
     <section id="contato" className="mt-20 scroll-mt-24 md:mt-28">
       <Revelar>
         <div className="relative overflow-hidden rounded-lg border border-border bg-surface p-7 shadow-card md:p-10">
           <div className="malha pointer-events-none absolute inset-x-0 -top-8 h-48" aria-hidden="true" />
           <div className="relative">
-            <p className="m-0 mb-1.5 text-xs font-medium uppercase tracking-[0.08em] text-text-faint">Contato</p>
-            <h2 className="m-0 max-w-xl text-2xl font-semibold leading-tight text-text md:text-3xl">
-              Tem uma vaga de dados em que esse perfil se encaixa?
-            </h2>
-            <p className="m-0 mt-3 max-w-xl text-sm leading-6 text-text-dim md:text-base">
-              Respondo rápido no LinkedIn e por e-mail. Se quiser ver código antes de conversar, o GitHub está aberto.
-            </p>
+            <p className="m-0 mb-1.5 text-xs font-medium uppercase tracking-[0.08em] text-text-faint">{c.contato.eyebrow}</p>
+            <h2 className="m-0 max-w-xl text-2xl font-semibold leading-tight text-text md:text-3xl">{c.contato.titulo}</h2>
+            <p className="m-0 mt-3 max-w-xl text-sm leading-6 text-text-dim md:text-base">{c.contato.apoio}</p>
             <div className="mt-6 flex flex-wrap gap-2.5">
               <LinkButton href={`mailto:${PERFIL.email}`} icone={<Mail size={16} strokeWidth={2} />}>
-                Enviar e-mail
+                {c.rotulos.enviarEmail}
               </LinkButton>
               <LinkButton href={PERFIL.linkedin} variante="secundario" icone={<Linkedin size={16} strokeWidth={2} />}>
                 LinkedIn
@@ -32,8 +31,10 @@ export function Contato() {
       </Revelar>
 
       <footer className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-6 text-xs text-text-faint">
-        <span>© {new Date().getFullYear()} {PERFIL.nome}</span>
-        <span>React · TypeScript · Tailwind — mesmo sistema de design do Life-OS</span>
+        <span>
+          © {new Date().getFullYear()} {PERFIL.nome}
+        </span>
+        <span>{c.rotulos.rodape}</span>
       </footer>
     </section>
   );

@@ -17,16 +17,37 @@ npm run build   # gera dist/
 
 ```
 src/
-  data/perfil.ts      # todo o conteúdo: experiências, projetos, stack, formação
+  data/
+    tipos.ts          # formato do conteúdo — o contrato que as traduções cumprem
+    pt.ts / en.ts     # conteúdo em português e em inglês
+    perfil.ts         # o que não muda de idioma: nome, contatos, cores dos eixos
   components/
     Shell.tsx         # casca: barra lateral no desktop, barra superior no celular
-    ui.tsx            # Card, Chip, LinkButton, InfoTip, ThemeToggle, SectionHeader
+    ui.tsx            # Card, Chip, LinkButton, InfoTip, Figura, toggles de tema e idioma
   sections/           # Visão geral, Trajetória, Projetos, Stack, Formação, Contato
   styles/tokens.css   # paleta — fonte única de cor, herdada do Life-OS
-  utils/              # cn (classes) e tema (claro/escuro/sistema)
+  utils/              # cn (classes), tema (claro/escuro) e idioma (pt/en)
+public/
+  foto.jpg            # retrato do topo
+  projetos/           # capturas dos projetos, referenciadas em pt.ts e en.ts
 ```
 
-Para atualizar o conteúdo, mexa só em `src/data/perfil.ts`. As seções leem tudo de lá.
+Para atualizar o conteúdo, mexa em `src/data/pt.ts` e `src/data/en.ts`. Os dois
+cumprem a interface `Conteudo` de `tipos.ts`, então o TypeScript acusa se uma
+tradução esquecer um campo.
+
+## Idiomas
+
+Português e inglês, com o seletor PT/EN ao lado do tema. A primeira visita segue
+o idioma do navegador (português para quem chega com `pt-*`, inglês para o
+resto); depois disso vale a escolha salva. O `lang` do documento, o título da
+aba e a meta descrição acompanham a troca.
+
+## Imagens
+
+As capturas ficam em `public/projetos/` e são declaradas no campo `imagem` de
+cada projeto, com `alt` e legenda. Se um arquivo não existir, a figura inteira
+sai do layout em vez de deixar imagem quebrada no cartão.
 
 ## Decisões
 

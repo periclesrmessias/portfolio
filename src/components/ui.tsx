@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type HTMLAttributes, type ReactNode } from
 import { Info, Moon, Sun } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { useTema } from "@/utils/tema";
+import { useIdioma } from "@/utils/idioma";
 
 /**
  * Bloco de conteúdo, na mesma geometria do Life-OS: no tema claro a separação
@@ -145,6 +146,64 @@ export function ThemeToggle({ className }: { className?: string }) {
     >
       {escuro ? <Sun size={16} strokeWidth={2} /> : <Moon size={16} strokeWidth={2} />}
     </button>
+  );
+}
+
+/** Troca de idioma, ao lado do tema. Dois estados, sem menu suspenso. */
+export function LanguageToggle({ className }: { className?: string }) {
+  const { idioma, definirIdioma } = useIdioma();
+  return (
+    <div
+      className={cn("inline-flex items-center gap-0.5 rounded-full bg-controle p-0.5", className)}
+      role="group"
+      aria-label="Idioma / Language"
+    >
+      {(["pt", "en"] as const).map((valor) => {
+        const ativo = idioma === valor;
+        return (
+          <button
+            key={valor}
+            type="button"
+            onClick={() => definirIdioma(valor)}
+            aria-pressed={ativo}
+            lang={valor === "pt" ? "pt-BR" : "en"}
+            className={cn(
+              "rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide transition-colors duration-150",
+              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+              ativo ? "bg-controle-ativo text-text shadow-pilula" : "text-text-faint hover:text-text-dim",
+            )}
+          >
+            {valor}
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+/**
+ * Imagem de projeto. Se o arquivo não existir, a figura inteira sai do fluxo em
+ * vez de deixar o ícone de imagem quebrada no cartão: uma captura ausente não
+ * pode estragar a página. `loading="lazy"` porque quase todas estão abaixo da
+ * dobra, e a proporção fixa reserva o espaço para o layout não pular.
+ */
+export function Figura({ src, alt, legenda }: { src: string; alt: string; legenda: string }) {
+  const [falhou, definirFalhou] = useState(false);
+  if (falhou) return null;
+
+  return (
+    <figure className="m-0 mt-4 overflow-hidden rounded-md border border-border bg-surface-2">
+      <img
+        // `base` relativo: o caminho não pode começar com barra.
+        src={src}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={() => definirFalhou(true)}
+        className="block aspect-[16/9] w-full object-cover object-top"
+      />
+      <figcaption className="border-t border-border px-3 py-2 text-xs leading-5 text-text-faint">{legenda}</figcaption>
+    </figure>
   );
 }
 
