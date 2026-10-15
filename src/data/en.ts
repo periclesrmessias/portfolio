@@ -131,7 +131,7 @@ export const EN: Conteudo = {
 
   linhaDoTempo: [
     { ano: "2020", titulo: "Moro e Messias", detalhe: "Operations, pricing and the first controls in Excel/VBA." },
-    { ano: "2024", titulo: "Transition", detalhe: "Google Data Analytics completed in November." },
+    { ano: "2024", titulo: "Full focus on data", detalhe: "A year dedicated to deepening my data foundations, completing Google Data Analytics in November." },
     { ano: "2024", titulo: "Ativação Group", detalhe: "First dedicated data role: sell-out, OTB and Python." },
     { ano: "2025", titulo: "Superus Engenharia", detalhe: "Market intelligence, CRM on Supabase, 40+ dashboards." },
     { ano: "2025", titulo: "Data Science degree", detalhe: "Started at Estácio, graduating Jul 2027." },

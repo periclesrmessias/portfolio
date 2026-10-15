@@ -131,7 +131,7 @@ export const PT: Conteudo = {
 
   linhaDoTempo: [
     { ano: "2020", titulo: "Moro e Messias", detalhe: "Operações, pricing e os primeiros controles em Excel/VBA." },
-    { ano: "2024", titulo: "Transição", detalhe: "Google Data Analytics concluído em novembro." },
+    { ano: "2024", titulo: "Foco total em Dados", detalhe: "Ano dedicado a aprofundar a base técnica em Dados, com o Google Data Analytics concluído em novembro." },
     { ano: "2024", titulo: "Ativação Group", detalhe: "Primeira função dedicada a dados: sell-out, OTB e Python." },
     { ano: "2025", titulo: "Superus Engenharia", detalhe: "Inteligência de mercado, CRM em Supabase, 40+ dashboards." },
     { ano: "2025", titulo: "Ciência de Dados", detalhe: "Início do tecnólogo na Estácio, conclusão em jul/2027." },
