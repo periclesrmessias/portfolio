@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState, type HTMLAttributes, type ReactNode } from "react";
-import { Info, Moon, Sun } from "lucide-react";
+import { createPortal } from "react-dom";
+import { Info, Maximize2, Moon, Sun, X } from "lucide-react";
 import { cn } from "@/utils/cn";
 import { useTema } from "@/utils/tema";
 import { useIdioma } from "@/utils/idioma";
 
 /**
- * Bloco de conteúdo, na mesma geometria do Life-OS: no tema claro a separação
+ * Bloco de conteúdo: no tema claro a separação
  * vem da borda fina e de uma sombra quase imperceptível; no escuro, da
  * superfície um degrau mais clara que o fundo.
  */
@@ -183,38 +184,128 @@ export function LanguageToggle({ className }: { className?: string }) {
 
 /**
  * Imagem de projeto. Se o arquivo não existir, a figura inteira sai do fluxo em
- * vez de deixar o ícone de imagem quebrada no cartão: uma captura ausente não
- * pode estragar a página. `loading="lazy"` porque quase todas estão abaixo da
- * dobra.
+ * vez de deixar o ícone de imagem quebrada no cartão. `loading="lazy"` porque
+ * quase todas estão abaixo da dobra.
  *
- * A imagem mantém a própria proporção em vez de entrar numa moldura fixa: são
- * capturas de dashboard e de console, onde recortar a borda tira justamente o
- * filtro, o cabeçalho ou a coluna que provam o que está sendo mostrado.
+ * A imagem mantém a própria proporção: são capturas de dashboard e de console,
+ * onde recortar a borda tira o filtro, o cabeçalho ou a coluna que provam o que
+ * está sendo mostrado. Um clique abre a imagem ampliada (`Ampliacao`), para
+ * quem quiser ler os detalhes.
  */
-export function Figura({ src, alt, legenda }: { src: string; alt: string; legenda: string }) {
+export function Figura({ src, alt, legenda, className }: { src: string; alt: string; legenda: string; className?: string }) {
   const [falhou, definirFalhou] = useState(false);
+  const [ampliada, definirAmpliada] = useState(false);
+  const { idioma } = useIdioma();
   if (falhou) return null;
 
+  const rotuloAmpliar = idioma === "pt" ? `Ampliar imagem: ${legenda}` : `Enlarge image: ${legenda}`;
+
   return (
-    <figure className="m-0 mt-4 overflow-hidden rounded-md border border-border bg-surface-2">
-      <img
-        // `base` relativo: o caminho não pode começar com barra.
-        src={src}
-        alt={alt}
-        loading="lazy"
-        decoding="async"
-        onError={() => definirFalhou(true)}
-        className="block h-auto w-full"
-      />
+    <figure className={cn("m-0 mt-4 overflow-hidden rounded-md border border-border bg-surface-2", className)}>
+      <button
+        type="button"
+        onClick={() => definirAmpliada(true)}
+        aria-label={rotuloAmpliar}
+        className="group relative block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
+      >
+        <img
+          // `base` relativo: o caminho não pode começar com barra.
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          onError={() => definirFalhou(true)}
+          className="block h-auto w-full"
+        />
+        <span
+          className="absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-black/60 text-white opacity-80 transition-opacity duration-150 group-hover:opacity-100"
+          aria-hidden="true"
+        >
+          <Maximize2 size={15} strokeWidth={2} />
+        </span>
+      </button>
       <figcaption className="border-t border-border px-3 py-2 text-xs leading-5 text-text-faint">{legenda}</figcaption>
+      {ampliada && <Ampliacao src={src} alt={alt} legenda={legenda} aoFechar={() => definirAmpliada(false)} />}
     </figure>
   );
 }
 
 /**
+ * Imagem em tela cheia. Abre ajustada à janela; um clique na imagem alterna
+ * para o tamanho original, com rolagem, para ler texto pequeno. Fecha no Esc,
+ * no botão ou no clique fora da imagem, e trava a rolagem da página enquanto
+ * está aberta.
+ */
+function Ampliacao({ src, alt, legenda, aoFechar }: { src: string; alt: string; legenda: string; aoFechar: () => void }) {
+  const [original, definirOriginal] = useState(false);
+  const { idioma } = useIdioma();
+  const fechar = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const aoTeclar = (e: KeyboardEvent) => e.key === "Escape" && aoFechar();
+    document.addEventListener("keydown", aoTeclar);
+    const overflowAnterior = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const focoAnterior = document.activeElement as HTMLElement | null;
+    fechar.current?.focus();
+    return () => {
+      document.removeEventListener("keydown", aoTeclar);
+      document.body.style.overflow = overflowAnterior;
+      focoAnterior?.focus();
+    };
+  }, [aoFechar]);
+
+  return createPortal(
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={legenda}
+      onClick={(e) => e.target === e.currentTarget && aoFechar()}
+      className={cn(
+        "fixed inset-0 z-50 flex bg-black/85 p-4 backdrop-blur-sm md:p-8",
+        original ? "items-start justify-start overflow-auto" : "items-center justify-center",
+      )}
+    >
+      <button
+        ref={fechar}
+        type="button"
+        onClick={aoFechar}
+        aria-label={idioma === "pt" ? "Fechar imagem" : "Close image"}
+        className="fixed right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-white/15 text-white transition-colors hover:bg-white/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+      >
+        <X size={20} strokeWidth={2} />
+      </button>
+      <figure className={cn("m-0 flex flex-col items-center gap-3", original && "mx-auto")} onClick={(e) => e.target === e.currentTarget && aoFechar()}>
+        <img
+          src={src}
+          alt={alt}
+          onClick={() => definirOriginal((v) => !v)}
+          className={cn(
+            "block rounded-md shadow-overlay",
+            original ? "max-w-none cursor-zoom-out" : "max-h-[82vh] max-w-full cursor-zoom-in object-contain",
+          )}
+        />
+        <figcaption className="max-w-2xl text-center text-xs leading-5 text-white/75">
+          {legenda}
+          <span className="ml-1 text-white/50">
+            {idioma === "pt"
+              ? original
+                ? "Clique na imagem para ajustar à tela."
+                : "Clique na imagem para ver no tamanho original."
+              : original
+                ? "Click the image to fit the screen."
+                : "Click the image to view it at full size."}
+          </span>
+        </figcaption>
+      </figure>
+    </div>,
+    document.body,
+  );
+}
+
+/**
  * Cabeçalho de seção. O rótulo pequeno em versalete dá o contexto, o título é a
- * manchete e a linha de apoio explica o recorte — mesma hierarquia do
- * `PageHeader` do Life-OS.
+ * manchete e a linha de apoio explica o recorte.
  */
 export function SectionHeader({
   eyebrow,
@@ -241,7 +332,7 @@ export function SectionHeader({
  *
  * É CSS puro, de propósito. A versão anterior escondia o bloco e esperava um
  * IntersectionObserver para revelá-lo, e isso significa conteúdo invisível
- * sempre que o observador não dispara — aba carregada em segundo plano, por
+ * sempre que o observador não dispara, aba carregada em segundo plano, por
  * exemplo. Em um portfólio o custo desse modo de falha é alto demais: aqui
  * nenhum texto depende de JavaScript para existir, e o movimento é só o
  * acabamento. Sob `prefers-reduced-motion` a animação é neutralizada no CSS

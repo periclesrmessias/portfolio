@@ -1,5 +1,5 @@
 /*
- * Tokens de cor do Life-OS, fonte única da paleta.
+ * Tokens de cor, fonte única da paleta.
  *
  * Cada cor é gravada como canais RGB separados por espaço ("36 88 230") e lida
  * como `rgb(var(--c-x) / <alpha>)`. É esse formato que deixa o Tailwind aplicar

@@ -27,7 +27,7 @@ function aplicar(tema: Tema) {
 }
 
 /**
- * Tema em três estados, como no Life-OS. O script inline do `index.html` já
+ * Tema em três estados. O script inline do `index.html` já
  * pintou o documento antes do primeiro quadro; aqui só se mantém a sincronia
  * com a preferência do aparelho enquanto o modo for "sistema".
  */

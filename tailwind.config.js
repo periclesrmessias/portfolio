@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 /**
- * Mesma regra do Life-OS: nenhuma cor literal aqui dentro. Tudo aponta para as
+ * Regra: nenhuma cor literal aqui dentro. Tudo aponta para as
  * variáveis de `src/styles/tokens.css`, no formato que preserva o modificador
  * de opacidade do Tailwind (`border-warn/40`).
  */
@@ -31,7 +31,7 @@ export default {
         warn: { DEFAULT: cor("warn"), soft: cor("warn-soft") },
         danger: { DEFAULT: cor("danger"), soft: cor("danger-soft") },
         info: { DEFAULT: cor("info"), soft: cor("info-soft") },
-        // As três áreas do Life-OS viram os três eixos da trajetória:
+        // Três cores de área viram os três eixos da trajetória:
         // dados/BI, engenharia e negócio.
         area: { corpo: cor("area-corpo"), carreira: cor("area-carreira"), lazer: cor("area-lazer") },
         veu: cor("veu"),

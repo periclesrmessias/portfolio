@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Geist (OFL 1.1, licença em /fonts/geist-OFL.txt), a mesma fonte do Life-OS:
+/* Geist (OFL 1.1, licença em /fonts/geist-OFL.txt):
    arquivo variável, subset latino, servido pelo projeto. A feature `tnum` é o
    que faz `tabular-nums` alinhar de fato as colunas de indicador. */
 @font-face {

@@ -7,8 +7,8 @@ const CONTEUDOS: Record<Idioma, Conteudo> = { pt: PT, en: EN };
 const CHAVE = "portfolio:idioma";
 
 const TITULOS: Record<Idioma, string> = {
-  pt: "Péricles Messias — Dados, BI e Inteligência de Mercado",
-  en: "Péricles Messias — Data, BI & Market Intelligence",
+  pt: "Pericles Messias | Dados, BI e Inteligência de Mercado",
+  en: "Pericles Messias | Data, BI & Market Intelligence",
 };
 
 function inicial(): Idioma {

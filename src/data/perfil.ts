@@ -5,7 +5,7 @@ import type { Eixo } from "@/data/tipos";
  * O conteúdo traduzido mora em `pt.ts` e `en.ts`.
  */
 export const PERFIL = {
-  nome: "Péricles Messias",
+  nome: "Pericles Messias",
   email: "periclesrmessias@gmail.com",
   github: "https://github.com/periclesrmessias",
   linkedin: "https://www.linkedin.com/in/pericles-messias/",

@@ -19,7 +19,7 @@ const SECOES: { id: IdSecao; icone: typeof BarChart3 }[] = [
 /**
  * Qual seção está sendo lida: a última cujo topo já cruzou a linha logo abaixo
  * do cabeçalho. Critério fixo e não proporcional à altura da janela, para a
- * âncora acender a seção certa também em viewport baixa — e mais estável que o
+ * âncora acender a seção certa também em viewport baixa, e mais estável que o
  * `isIntersecting` puro, que pisca quando duas seções curtas cabem juntas.
  */
 function useSecaoAtiva(): IdSecao {
@@ -89,7 +89,7 @@ function LinkExterno({ href, children, icone }: { href: string; children: string
 
 /**
  * Casca da página: barra lateral fixa no desktop, barra superior rolável no
- * celular. A navegação é por âncora — é uma página só, e o scroll-spy diz onde
+ * celular. A navegação é por âncora, é uma página só, e o scroll-spy diz onde
  * o leitor está.
  */
 export function Shell({ children }: { children: ReactNode }) {
@@ -106,7 +106,7 @@ export function Shell({ children }: { children: ReactNode }) {
         {c.rotulos.pularParaConteudo}
       </a>
 
-      {/* Barra lateral — desktop */}
+      {/* Barra lateral, desktop */}
       <aside className="fixed inset-y-0 left-0 z-20 hidden w-60 flex-col border-r border-border bg-surface px-3 py-5 lg:flex">
         <div className="px-1.5">
           <Marca legenda={legendaMarca} />
@@ -151,7 +151,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </div>
       </aside>
 
-      {/* Barra superior — celular e tablet */}
+      {/* Barra superior, celular e tablet */}
       <header className="sticky top-0 z-20 border-b border-border bg-bg/85 backdrop-blur lg:hidden">
         <div className="flex items-center justify-between gap-3 px-4 py-3">
           <Marca legenda={legendaMarca} />

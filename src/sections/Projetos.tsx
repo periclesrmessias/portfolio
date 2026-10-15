@@ -7,7 +7,7 @@ import type { Eixo, Projeto } from "@/data/tipos";
 
 type Filtro = "todos" | Eixo;
 
-/** Projeto corporativo pesa diferente de case de portfólio — e o chip diz qual é qual. */
+/** Projeto corporativo pesa diferente de case de portfólio, e o chip diz qual é qual. */
 function CartaoProjeto({ projeto, corporativo }: { projeto: Projeto; corporativo: boolean }) {
   return (
     <Card className="flex h-full flex-col p-5 md:p-6">
@@ -19,7 +19,14 @@ function CartaoProjeto({ projeto, corporativo }: { projeto: Projeto; corporativo
       <h3 className="m-0 mt-3 text-lg font-semibold leading-snug text-text">{projeto.titulo}</h3>
       <p className="m-0 mt-2 text-sm leading-6 text-text-dim">{projeto.resumo}</p>
 
-      {projeto.imagem && <Figura {...projeto.imagem} />}
+      {projeto.imagens && projeto.imagens.length > 0 && (
+        // Fotos em pé ficam lado a lado; capturas de tela, uma sob a outra.
+        <div className={cn("mt-4 grid gap-3", projeto.imagens.every((i) => i.retrato) && projeto.imagens.length > 1 && "grid-cols-2")}>
+          {projeto.imagens.map((img) => (
+            <Figura key={img.src} {...img} className="mt-0" />
+          ))}
+        </div>
+      )}
 
       <ul className="m-0 mt-4 flex list-none flex-col gap-2 p-0">
         {projeto.destaques.map((d) => (

@@ -18,7 +18,7 @@ function MarcaEixo({ eixo, rotulo }: { eixo: Eixo; rotulo: string }) {
 
 /**
  * Um cargo. Resultados primeiro, porque é por eles que o currículo é lido; as
- * entregas ficam atrás de um acordeão para a seção não virar um muro de texto —
+ * entregas ficam atrás de um acordeão para a seção não virar um muro de texto , 
  * mas continuam no DOM, acessíveis e indexáveis.
  */
 function CartaoExperiencia({ exp, inicial, rotulos }: { exp: Experiencia; inicial: boolean; rotulos: Conteudo["rotulos"] }) {

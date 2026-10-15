@@ -1,7 +1,7 @@
 /**
  * Formato do conteúdo do portfólio. Cada idioma entrega um objeto deste tipo
  * (`pt.ts`, `en.ts`), então o TypeScript reclama se uma tradução esquecer um
- * campo — é o que mantém as duas versões em sincronia sem revisão manual.
+ * campo, é o que mantém as duas versões em sincronia sem revisão manual.
  */
 
 export type Idioma = "pt" | "en";
@@ -15,6 +15,8 @@ export interface Imagem {
   alt: string;
   /** Legenda curta sob a imagem. */
   legenda: string;
+  /** Foto em pé: várias fotos assim ficam lado a lado no cartão. */
+  retrato?: boolean;
 }
 
 export interface Kpi {
@@ -48,7 +50,8 @@ export interface Projeto {
   eixos: Eixo[];
   /** Observação honesta sobre limite, escopo ou descontinuação. */
   ressalva?: string;
-  imagem?: Imagem;
+  /** Capturas do projeto, na ordem em que aparecem no cartão. */
+  imagens?: Imagem[];
 }
 
 export interface GrupoStack {
@@ -72,7 +75,7 @@ export interface Marco {
   detalhe: string;
 }
 
-/** Rótulos da interface — o que não é conteúdo de currículo. */
+/** Rótulos da interface, o que não é conteúdo de currículo. */
 export interface Rotulos {
   navegacao: string;
   links: string;
@@ -107,7 +110,7 @@ export interface Conteudo {
   manchete: string;
   resumo: string;
   cargo: string;
-  /** Áreas em que atuo — palavras-chave do perfil, não pleito de vaga. */
+  /** Áreas em que atuo, palavras-chave do perfil, não pleito de vaga. */
   areasFoco: string[];
   kpis: Kpi[];
   trajetoria: { eyebrow: string; titulo: string; apoio: string };
