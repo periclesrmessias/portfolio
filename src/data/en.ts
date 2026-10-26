@@ -1,16 +1,16 @@
 import type { Conteudo } from "@/data/tipos";
 
 /**
- * English version. Same facts, same numbers. The vocabulary follows what data
- * job descriptions actually use (semantic layer, data contract, pipeline), so
- * the page reads naturally to an international recruiter and to an ATS.
+ * English version. Same facts, same numbers, same plain first-person tone as
+ * the Portuguese. Keeps the vocabulary data job descriptions use (semantic
+ * layer, pipeline, star schema) so it still reads well to recruiters and ATS.
  */
 export const EN: Conteudo = {
   idioma: "en",
   lang: "en",
-  manchete: "I turn scattered data into commercial decisions.",
+  manchete: "I work with data, BI and market intelligence.",
   resumo:
-    "Data Analyst with 5+ years across Analytics/BI, market intelligence and AI automation. At Superus Engenharia I build the analytics layer behind a BRL 3.5 billion sales pipeline, from the SQL in the CRM to the reporting leadership uses to prioritise.",
+    "I have 5+ years of experience in data analysis, BI, market intelligence and AI automation. Right now I'm at Superus Engenharia, looking after the data behind a BRL 3.5 billion sales pipeline. I write the SQL on top of the CRM, build the dashboards and deliver the reports leadership uses to decide where to focus.",
   cargo: "Data & Market Intelligence Analyst",
   areasFoco: ["Data Analyst", "BI Analyst", "Analytics Engineer", "Market Intelligence"],
 
@@ -20,34 +20,34 @@ export const EN: Conteudo = {
       valor: "BRL 3.5",
       sufixo: "bn+",
       contexto: "Open deals across the Superus sales team",
-      nota: "Total value of open opportunities in the commercial portfolio under analytical monitoring.",
+      nota: "Total value of the open opportunities in the sales portfolio I track.",
     },
     {
       label: "New business unit",
       valor: "BRL 10",
       sufixo: "M+/yr",
-      contexto: "Revenue of the unit created from my CAPEX market study",
-      nota: "Sizing the industrial CAPEX market from investor-relations reports of nearly 100 accounts led to a new business unit with a dedicated team and a BRL 600M+ pipeline.",
+      contexto: "Revenue of the unit that came out of my CAPEX market study",
+      nota: "I sized the industrial CAPEX market using investor-relations reports from nearly 100 accounts. That study led to a new business unit with its own team and a BRL 600M+ pipeline.",
     },
     {
       label: "Power BI dashboards",
       valor: "40",
       sufixo: "+",
-      contexto: "Integrating 30+ sources, used weekly by leadership",
-      nota: "Commercial KPIs, portfolio, pipeline, auditing and executive reporting. Another 26 in the ASAP Facilities project.",
+      contexto: "Pulling from 30+ sources, used every week by leadership",
+      nota: "Sales KPIs, portfolio, pipeline, auditing and leadership reporting. Plus another 26 in the ASAP Facilities project.",
     },
     {
       label: "Contact research",
       valor: "2h → 5min",
       contexto: "Claude + Apollo.io automation, used by Sales and HR",
-      nota: "Time to map the contacts of an account, previously manual, after integrating the Claude API with the Apollo.io API.",
+      nota: "Mapping the contacts of an account used to take me about 2 hours by hand. After I connected the Claude API to the Apollo.io API, it dropped to about 5 minutes.",
     },
   ],
 
   trajetoria: {
     eyebrow: "Career",
-    titulo: "From spreadsheet pricing to an analytical layer in production",
-    apoio: "I started in operations, moved through commercial analysis in retail, and now work where data meets the decision.",
+    titulo: "Where I've worked",
+    apoio: "I started in operations and pricing at a clinic, moved to commercial analysis in retail, and now work with data and market intelligence at an engineering company.",
   },
 
   experiencias: [
@@ -57,28 +57,28 @@ export const EN: Conteudo = {
       periodo: "Jul 2025 to present",
       atual: true,
       contexto:
-        "Industrial engineering and maintenance services for mining, steel, petrochemicals, pulp and paper and energy. Scope: data, sales and market intelligence, CRM governance, BI and automation.",
+        "Industrial engineering and maintenance company serving mining, steel, petrochemicals, pulp and paper and energy. I look after data, sales and market intelligence, the CRM, BI and automation.",
       entregas: [
-        "Sized the Brazilian industrial CAPEX market by extracting and modelling investment data from investor-relations reports of nearly 100 accounts.",
-        "Technical lead on migrating the sales portfolio to an in-house CRM, with analytical access through Supabase/PostgreSQL.",
-        "OPEX and CAPEX SQL views as a semantic layer and data contract between the CRM and Power BI: business logic pushed down to the database instead of duplicated in DAX.",
-        "Workflow stage extracted from JSONB with LEFT JOIN LATERAL; CASE to classify business states and COALESCE to chain contract-value fallbacks.",
-        "40+ star-schema dashboards integrating 30+ sources, with advanced DAX, time intelligence and row-level security per profile.",
-        "Audit dashboards acting as data quality checks: missing required fields, portfolio coverage and overdue expected close dates.",
-        "Auditable metric dictionary extracted from the model via INFO.VIEW.MEASURES().",
-        "Weekly reports pushed through Power Automate, personalised per sales rep.",
-        "Unique key per opportunity to enforce referential integrity and enable market-share analysis.",
-        "Macroeconomic indicators from IpeaData (economic activity, policy rate, FX, industry confidence) ingested through a REST API in Python and normalised with pandas.",
-        "Generative AI workflows (Claude API, MCP) for prospecting, reports and presentations in the company's visual identity.",
-        "Supabase and Power BI MCP servers in Claude Code for natural-language querying and modelling, including a DAX measure that renders the HTML Content visual.",
+        "Sized the Brazilian industrial CAPEX market by extracting and modelling investment data from the investor-relations reports of nearly 100 accounts.",
+        "Led the technical side of moving the sales portfolio to an in-house CRM, with data access through Supabase/PostgreSQL.",
+        "Built OPEX and CAPEX SQL views that sit between the CRM and Power BI, so business rules live in the database and don't have to be repeated in DAX.",
+        "Used LEFT JOIN LATERAL to pull the workflow stage out of JSONB, CASE to classify states and COALESCE to handle missing contract values.",
+        "Built 40+ star-schema dashboards pulling from 30+ sources, with advanced DAX, time intelligence and row-level security per profile.",
+        "Built audit dashboards to check data quality, like empty required fields, portfolio coverage and overdue expected close dates.",
+        "Created a metric dictionary pulled straight from the model with INFO.VIEW.MEASURES().",
+        "Automated weekly reports through Power Automate, one for each sales rep.",
+        "Created a unique key per opportunity to keep referential integrity and make market-share analysis possible.",
+        "Pull IpeaData indicators (economic activity, policy rate, FX, industry confidence) through a REST API in Python and clean them up in pandas.",
+        "Built generative AI workflows (Claude API, MCP) for prospecting, reports and presentations in the company's visual style.",
+        "Use Supabase and Power BI MCP servers in Claude Code to query and model in plain language, including a DAX measure that renders the HTML Content visual.",
       ],
       resultados: [
-        "CAPEX market study led to a new business unit with a dedicated team, BRL 10M+ in annual revenue and a BRL 600M+ pipeline.",
-        "CRM inconsistencies cut by 12% with PostgreSQL views, business rules and data-quality checks.",
-        "Dashboards used weekly by the board and CEO to prioritise 50+ opportunities.",
-        "3 hours of manual work per week eliminated by automating IpeaData ingestion.",
-        "Contact research from ~2 hours to ~5 minutes and presentation creation from 3+ hours to under 1 hour with generative AI.",
-        "6+ hours a week saved on PBIP dashboard modelling with Claude + powerbi-modelling-mcp.",
+        "The CAPEX market study led to a new business unit with its own team, BRL 10M+ in yearly revenue and a BRL 600M+ pipeline.",
+        "Cut CRM inconsistencies by 12% with PostgreSQL views, business rules and data-quality checks.",
+        "The board and CEO use the dashboards every week to prioritise 50+ opportunities.",
+        "Got rid of 3 hours of manual work a week by automating IpeaData collection.",
+        "With generative AI, contact research went from ~2 hours to ~5 minutes and building presentations from 3+ hours to under 1 hour.",
+        "I save 6+ hours a week on PBIP dashboard modelling with Claude + powerbi-modelling-mcp.",
       ],
       stack: ["Power BI", "DAX", "Power Query", "PostgreSQL", "Supabase", "SQL", "Python", "pandas", "REST APIs", "Power Automate", "MCP", "Claude API"],
       eixos: ["dados", "negocio", "engenharia"],
@@ -87,21 +87,21 @@ export const EN: Conteudo = {
       cargo: "Commercial Data Analyst",
       empresa: "Ativação Group",
       periodo: "Dec 2024 to Jul 2025",
-      contexto: "Footwear retail. Sell-out, customer portfolio and Open-to-Buy driving purchasing decisions by demand and turnover.",
+      contexto: "Footwear retail. I worked with sell-out, the customer portfolio and Open-to-Buy to support purchasing decisions based on demand and turnover.",
       entregas: [
-        "Exploratory data analysis (EDA) of sell-out data in Power BI across 30+ SKUs and stores, surfacing consumption patterns.",
-        "Open-to-Buy (OTB) analysis from historical demand and inventory turnover to guide purchasing and product mix.",
-        "Datasets structured and modelled for EDA, KPIs and time series.",
-        "Governance of customer and store master data, with inconsistencies corrected.",
-        "Sell-out ETL pipeline automated in Power Query.",
-        "Python (pandas) script to process datasets and distribute reports by e-mail automatically.",
+        "Ran exploratory analyses of sell-out data in Power BI across 30+ SKUs and stores to find buying patterns.",
+        "Built the Open-to-Buy (OTB) from historical demand and inventory turnover to guide purchasing and mix.",
+        "Structured and modelled the datasets behind the analyses, KPIs and time series.",
+        "Looked after the customer and store data, fixing what was inconsistent.",
+        "Automated the sell-out ETL in Power Query.",
+        "Wrote a Python (pandas) script that cleans the data and e-mails the reports on its own.",
       ],
       resultados: [
-        "BRL 50k+ in incremental sales from opportunities found in the EDA.",
-        "Excess inventory reduced by 7% through OTB-driven decisions.",
-        "Sell-out processing cycle cut from 1 hour to 5 minutes.",
-        "Report processing and distribution routine cut from ~30 minutes to ~2 minutes.",
-        "Data for ~3,000 units structured to support commercial negotiations of ~BRL 5M.",
+        "BRL 50k+ in extra sales from opportunities I found in the analyses.",
+        "Excess inventory down 7% from decisions based on the OTB.",
+        "Sell-out processing went from 1 hour to 5 minutes.",
+        "Report processing and sending went from ~30 minutes to ~2 minutes.",
+        "Structured data for ~3,000 units used in negotiations worth ~BRL 5M.",
       ],
       stack: ["Power BI", "Power Query", "Python", "pandas", "Advanced Excel", "Pipefy"],
       eixos: ["dados", "negocio"],
@@ -110,19 +110,19 @@ export const EN: Conteudo = {
       cargo: "Pricing & Data Analyst",
       empresa: "Moro e Messias",
       periodo: "Oct 2020 to Dec 2023",
-      contexto: "Four-person dermatology clinic, with a multi-role scope across operations, pricing, data and financial controls.",
+      contexto: "Four-person dermatology clinic. I did a bit of everything, from operations and pricing to data and financial controls.",
       entregas: [
-        "Supplier and competitor price monitoring across 50+ products feeding pricing decisions.",
-        "Inventory control for medical supplies with consumption and cost KPIs.",
-        "Patient, product and supplier datasets integrated with referential integrity and data-quality rules.",
-        "Exploratory analysis and demographic segmentation of patients to define personas and guide marketing.",
-        "ETL routines in Power Query and VBA automating supply reports and financial calculations.",
+        "Tracked supplier and competitor prices across 50+ products to set our prices.",
+        "Ran inventory control for supplies with consumption and cost KPIs.",
+        "Brought the patient, product and supplier data together, with data-quality rules and referential integrity.",
+        "Analysed and segmented patients by demographics to define personas and help marketing.",
+        "Automated supply reports and financial calculations with Power Query and VBA.",
       ],
       resultados: [
-        "Monthly financial report preparation time reduced by ~70%.",
+        "The monthly financial report took ~70% less time to prepare.",
         "Margin up 3% from pricing decisions.",
-        "Supply stockouts and waste reduced by 6%.",
-        "22% of duplicate or inconsistent records eliminated.",
+        "Supply stockouts and waste down 6%.",
+        "Removed 22% of duplicate or inconsistent records.",
       ],
       stack: ["Excel", "VBA", "Power Query"],
       eixos: ["negocio", "dados"],
@@ -130,30 +130,30 @@ export const EN: Conteudo = {
   ],
 
   linhaDoTempo: [
-    { ano: "2020", titulo: "Moro e Messias", detalhe: "Operations, pricing and the first controls in Excel/VBA." },
-    { ano: "2024", titulo: "Full focus on data", detalhe: "A year dedicated to deepening my data foundations, completing Google Data Analytics in November." },
-    { ano: "2024", titulo: "Ativação Group", detalhe: "First dedicated data role: sell-out, OTB and Python." },
-    { ano: "2025", titulo: "Superus Engenharia", detalhe: "Market intelligence, CRM on Supabase, 40+ dashboards." },
-    { ano: "2025", titulo: "Data Science degree", detalhe: "Started at Estácio, graduating Jul 2027." },
-    { ano: "2026", titulo: "Airflow 3", detalhe: "Astronomer certification in orchestration." },
+    { ano: "2020", titulo: "Moro e Messias", detalhe: "Operations, pricing and my first controls in Excel and VBA." },
+    { ano: "2024", titulo: "Full focus on data", detalhe: "Spent the year studying data and finished Google Data Analytics in November." },
+    { ano: "2024", titulo: "Ativação Group", detalhe: "First job fully in data. Sell-out, OTB and Python." },
+    { ano: "2025", titulo: "Superus Engenharia", detalhe: "Market intelligence, a CRM on Supabase and 40+ dashboards." },
+    { ano: "2025", titulo: "Data Science degree", detalhe: "Started at Estácio, expected to finish in Jul 2027." },
+    { ano: "2026", titulo: "Airflow 3", detalhe: "Got the Astronomer certification in orchestration." },
   ],
 
   projetos: {
     eyebrow: "Projects",
-    titulo: "What I built, and what each one solved",
-    apoio: "Corporate project, technical case study and portfolio project are labelled as such. Where the scope has limits, the limits are stated. Click any image to enlarge it.",
+    titulo: "Some things I've built",
+    apoio: "Split into company projects, a technical case study and personal projects. Where there's a limitation, I wrote it down. Click any image to enlarge it.",
     itens: [
       {
         titulo: "Aviation data intelligence",
         natureza: "Corporate project",
         org: "ASAP Facilities",
         resumo:
-          "~10 years of Brazilian civil aviation flight data, in the millions of records, turned into performance tracking, market share and commercial prioritisation.",
+          "I took about 10 years of Brazilian civil aviation flight data, millions of records, and turned it into performance tracking, market share and sales prioritisation.",
         destaques: [
           "26 dashboards built from 35 different data sources.",
           "Passengers, fuel, baggage, RPK, RTK, ASK, ATK and departures by airport and aircraft.",
           "Inflation, economic activity, policy rate, FX, GDP and jet fuel prices joined to the base.",
-          "Consumer complaint data cross-referenced to find service quality patterns.",
+          "Cross-referenced consumer complaints to spot service quality patterns.",
           "Competitor benchmarking by revenue, market share and client base.",
         ],
         stack: ["Power BI", "DAX", "Power Query", "Python", "Excel"],
@@ -171,11 +171,11 @@ export const EN: Conteudo = {
         natureza: "Corporate project",
         org: "Superus Engenharia",
         resumo:
-          "Market dashboard by industrial sector (mining, steel, pulp and paper) combining output, exports and financial indicators to size addressable demand.",
+          "Market dashboard by industrial sector (mining, steel, pulp and paper) that brings together output, exports and financial indicators to estimate how much demand we can go after.",
         destaques: [
-          "Sector indicators on a single scale, comparable to one another.",
-          "Historical series filtered by year for trend reading.",
-          "Used by sales leadership to prioritise accounts.",
+          "Every sector on the same scale, so they can be compared.",
+          "Historical series with a year filter to see the trend.",
+          "Sales leadership uses it to prioritise accounts.",
         ],
         stack: ["Power BI", "DAX", "SQL", "Python"],
         eixos: ["dados", "negocio"],
@@ -192,12 +192,12 @@ export const EN: Conteudo = {
         natureza: "Corporate project",
         org: "Superus Engenharia",
         resumo:
-          "The Claude API wired to Apollo.io: a natural-language command becomes a structured sales intelligence query, and the output is a contact base ready for the sales team.",
+          "I connected the Claude API to Apollo.io. You type what you need in plain language, it becomes a structured query, and the result comes out as a contact list ready for the sales team.",
         destaques: [
-          "Prompt engineering, tool calling and validation of the structured response.",
-          "Base by company, role, plant and decision level (decision maker, influencer, operational).",
-          "Contact research for an account from ~2 hours to ~5 minutes.",
-          "Adopted by the Sales and HR teams.",
+          "Prompt engineering, tool calling and validation of the response.",
+          "Contacts split by company, role, plant and decision level (decision maker, influencer, operational).",
+          "Contact research for an account went from ~2 hours to ~5 minutes.",
+          "Sales and HR use it day to day.",
         ],
         stack: ["Python", "Claude API", "Apollo.io API", "REST", "Tool calling"],
         eixos: ["engenharia", "negocio"],
@@ -205,7 +205,7 @@ export const EN: Conteudo = {
           {
             src: "projetos/prospeccao-base-contatos.png",
             alt: "Spreadsheet produced by the automation with company, name, role, plant, decision level, e-mail, LinkedIn and phone columns; names and contact details blurred.",
-            legenda: "Contact base produced by the automation. Names and contact details blurred.",
+            legenda: "Contact list produced by the automation. Names and contact details blurred.",
           },
         ],
       },
@@ -214,12 +214,12 @@ export const EN: Conteudo = {
         natureza: "Corporate project",
         org: "Superus Engenharia",
         resumo:
-          "I drove generative AI adoption at Superus, from a proof of concept with measured gains to presenting good practices to the teams, and became the internal go-to person on the subject.",
+          "I pushed generative AI adoption at Superus. I started with a proof of concept with measured gains, then gave good-practice talks to the teams, and now I'm the person people come to about AI.",
         destaques: [
-          "Proof of concept with measurable gains led the company to extend licences to other departments.",
-          "Presentations and guides for the teams on everyday AI use and picking the right model for each task.",
-          "Knowledge base and structured prompts for reports and decks in the company's visual identity: from 3+ hours to under 1 hour.",
-          "Claude Code with Power BI and Supabase MCP servers for dashboard modelling: 6+ hours a week saved.",
+          "The proof of concept showed gains and the company extended licences to other departments.",
+          "Gave talks and wrote guides on using AI day to day and picking the right model for each task.",
+          "Built a knowledge base and prompts for reports and decks in the company's visual style, which went from 3+ hours to under 1 hour.",
+          "I use Claude Code with Power BI and Supabase MCP servers to model dashboards and save 6+ hours a week.",
         ],
         stack: ["Claude", "Claude Code", "MCP", "Prompt engineering", "Change management"],
         eixos: ["engenharia", "negocio"],
@@ -233,7 +233,7 @@ export const EN: Conteudo = {
           {
             src: "projetos/apresentacao-ia-2.jpg",
             alt: "Wide view of the office with employees gathered for the AI presentation.",
-            legenda: "Teams from several departments at the presentation.",
+            legenda: "People from several departments at the presentation.",
             retrato: true,
           },
         ],
@@ -243,16 +243,16 @@ export const EN: Conteudo = {
         natureza: "Corporate project",
         org: "ASAP Facilities",
         resumo:
-          "Hourly weather ingestion for Brazil's 27 state capitals, orchestrated in Airflow and persisted to a data warehouse on Azure, supporting ground operations planning.",
+          "Hourly weather collection for Brazil's 27 state capitals, orchestrated in Airflow and stored in a data warehouse on Azure, to help plan ground operations.",
         destaques: [
           "DAGs with explicit dependencies, scheduler, retries, logging and monitoring.",
-          "External API extraction under rate limiting, with error handling.",
-          "Payload validated and normalised before persistence.",
+          "External API extraction that respects the rate limit and handles errors.",
+          "Payload validated and normalised before saving.",
           "Partitioned by capital in Blob Storage.",
         ],
         stack: ["Apache Airflow", "Python", "Azure", "REST APIs"],
         ressalva:
-          "Used in production for a period and then discontinued for lack of ongoing support: maintenance, infrastructure and API cost. The takeaway was the full cycle: ingestion, orchestration, observability and operational ownership.",
+          "Operations used it for a while, but it was shut down because there wasn't a structure to keep it running (maintenance, infrastructure and API cost). Still, it's where I went through the full cycle of ingestion, orchestration, observability and running something in production.",
         eixos: ["engenharia"],
         imagens: [
           {
@@ -266,16 +266,16 @@ export const EN: Conteudo = {
         titulo: "Approval threshold and guarantee pricing",
         natureza: "Technical case study",
         resumo:
-          "An e-commerce risk case: an order dataset linking risk score, approval rate, chargeback and the unit economics of a guarantee, from the calculation to an operating recommendation.",
+          "An e-commerce risk case with an order dataset linking risk score, approval, chargeback and the unit economics of a guarantee. I went from the calculation to a recommendation on how to operate.",
         destaques: [
-          "Threshold set at the 10th percentile of the score distribution: cut-off at ~0.86.",
+          "Threshold at the 10th percentile of the score, with the cut-off at ~0.86.",
           "~90% approval rate and 0.42% chargeback among approved orders.",
           "USD 15.41M in approved revenue against USD 15.09k in chargebacks.",
-          "Minimum fee of 0.20%; recommendation to operate between 0.25% and 0.30% to absorb volatility.",
-          "Drift monitoring with recalibration if approval drifts ±1% or chargeback exceeds 0.60%.",
+          "Minimum fee of 0.20%, with a recommendation to operate between 0.25% and 0.30% to absorb swings.",
+          "Drift monitoring, recalibrating if approval moves ±1% or chargeback goes above 0.60%.",
         ],
         stack: ["Python", "pandas", "NumPy", "SciPy", "Matplotlib"],
-        ressalva: "The monitoring criteria are hypotheses produced within the case study, not external market validation.",
+        ressalva: "The monitoring criteria are assumptions I set within the case itself, with no external validation.",
         eixos: ["dados", "negocio"],
         imagens: [
           {
@@ -287,28 +287,28 @@ export const EN: Conteudo = {
       },
       {
         titulo: "CAPEX forecasting model",
-        natureza: "Portfolio project",
+        natureza: "Personal project",
         resumo:
-          "Investment history, financial indicators, commodity prices and macro variables combined in XGBoost to estimate future investment and prioritise addressable accounts.",
+          "An XGBoost model that combines investment history, financial indicators, commodities and macro data to estimate future investment and help prioritise accounts.",
         destaques: [
           "Feature engineering with macroeconomic and commodity variables.",
-          "Support for commercial prioritisation, not automated decisions.",
+          "It supports sales prioritisation. The decision stays with the team.",
         ],
         stack: ["Python", "pandas", "XGBoost"],
         ressalva:
-          "Exploratory model: validation strategy and error metric against a baseline are not yet formalised, so it is presented as prioritisation support rather than a validated predictor.",
+          "Still exploratory. I haven't formalised validation or an error metric against a baseline yet, so I only use it as support.",
         eixos: ["dados"],
       },
       {
         titulo: "Life-OS",
-        natureza: "Portfolio project",
+        natureza: "Personal project",
         resumo:
-          "A personal app for habits, mood, finances and career in React, TypeScript, Tailwind and Supabase, with statistics dashboards built from scratch.",
+          "An app I built to track habits, mood, finances and career, in React, TypeScript, Tailwind and Supabase, with the stats dashboards made from scratch.",
         destaques: [
           "Supabase/PostgreSQL with authentication and row-level security.",
-          "Hand-built SVG charts (line, bar, funnel, heatmap) with no charting library.",
-          "Derived metrics: adherence, streaks, month-over-month comparison and spending projection at the current pace.",
-          "Palette and typography in CSS tokens, with light and dark themes.",
+          "Hand-made SVG charts (line, bar, funnel, heatmap), no charting library.",
+          "Metrics like adherence, streaks, month-over-month comparison and spending projection at the current pace.",
+          "Colours and typography in CSS tokens, with light and dark themes.",
         ],
         stack: ["React", "TypeScript", "Tailwind", "Supabase", "Vite"],
         eixos: ["engenharia", "dados"],
@@ -330,8 +330,8 @@ export const EN: Conteudo = {
 
   stack: {
     eyebrow: "Stack",
-    titulo: "Tools I use in real work",
-    apoio: "Grouped by the three axes the career runs along.",
+    titulo: "Tools I use day to day",
+    apoio: "Grouped by the three areas I work in.",
     grupos: [
       {
         titulo: "BI and visualisation",
@@ -378,7 +378,7 @@ export const EN: Conteudo = {
 
   formacao: {
     eyebrow: "Education",
-    titulo: "Academic background and certifications",
+    titulo: "Education and certifications",
     itens: [
       {
         titulo: "Associate Degree in Data Science",
@@ -399,22 +399,22 @@ export const EN: Conteudo = {
         titulo: "Google Data Analytics Professional Certificate",
         instituicao: "Google",
         periodo: "Nov 2024",
-        detalhe: "The full analytics cycle, with SQL, spreadsheets, R and Tableau.",
+        detalhe: "The analysis cycle end to end, with SQL, spreadsheets, R and Tableau.",
         tipo: "certificacao",
       },
     ],
     emDesenvolvimento: [
-      "Version-controlled transformation with dbt, including tests and documentation.",
-      "CI/CD for data pipelines and containerisation with Docker.",
+      "dbt for version-controlled transformation, with tests and documentation.",
+      "CI/CD for data pipelines and Docker.",
       "Distributed processing (Spark/Databricks) and columnar formats.",
-      "AI beyond API consumption: RAG, embeddings and LLM evaluation.",
+      "AI beyond calling an API, like RAG, embeddings and LLM evaluation.",
     ],
   },
 
   contato: {
     eyebrow: "Contact",
-    titulo: "Want to talk data?",
-    apoio: "I reply quickly on LinkedIn and by e-mail. If you'd rather see code first, GitHub is open.",
+    titulo: "Want to talk?",
+    apoio: "Reach me on WhatsApp, LinkedIn or by e-mail. If you'd like to see code first, my GitHub is public.",
   },
 
   rotulos: {
@@ -430,25 +430,26 @@ export const EN: Conteudo = {
     },
     eixos: { dados: "Analytics & BI", engenharia: "Data Engineering", negocio: "Business Intelligence" },
     areasDeAtuacao: "I work as",
-    verProjetos: "See the projects",
+    verProjetos: "See projects",
     papelAtual: "Data & Market Intelligence Analyst · Superus Engenharia",
-    formacaoEmCurso: "Data Science degree in progress",
+    formacaoEmCurso: "Studying for a Data Science degree",
     atual: "Current",
     resultados: "Results",
-    mostrarEntregas: (n) => `What I built (${n})`,
-    ocultarEntregas: "Hide details",
-    filtrarProjetos: "Filter projects by axis",
+    mostrarEntregas: (n) => `What I did (${n})`,
+    ocultarEntregas: "Hide",
+    filtrarProjetos: "Filter projects by area",
     todos: "All",
     linhaDoTempo: "Timeline",
     emCurso: "In progress",
-    emDesenvolvimento: "Currently learning",
-    emDesenvolvimentoApoio: "What I don't master yet, stated on purpose: more useful in an interview than discovering it halfway through.",
+    emDesenvolvimento: "Learning now",
+    emDesenvolvimentoApoio: "Things I don't know well yet and am studying.",
     enviarEmail: "Send e-mail",
-    qrWhatsapp: "Scan to message me on WhatsApp",
+    qrWhatsapp: "Point your camera here to message me on WhatsApp",
+    faleComigo: "Get in touch",
     tema: "Theme",
     idioma: "Language",
     pularParaConteudo: "Skip to content",
-    comoApurado: (label) => `How "${label}" is calculated`,
+    comoApurado: (label) => `How I got to "${label}"`,
     rodape: "React · TypeScript · Tailwind",
   },
 };

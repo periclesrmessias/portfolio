@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ArrowDown, Github, Linkedin, MapPin, Sparkles } from "lucide-react";
+import { useState, type ReactNode } from "react";
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Sparkles } from "lucide-react";
 import { PERFIL } from "@/data/perfil";
 import { Chip, InfoTip, LinkButton, Revelar } from "@/components/ui";
 import { useConteudo } from "@/utils/idioma";
@@ -36,6 +36,54 @@ function Foto() {
   );
 }
 
+/** Uma linha de contato do cartão do topo: ícone, rótulo e o endereço em si. */
+function LinhaContato({ href, icone, rotulo, valor }: { href: string; icone: ReactNode; rotulo: string; valor: string }) {
+  const externo = href.startsWith("http");
+  return (
+    <a
+      href={href}
+      {...(externo ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      className="flex items-center gap-3 rounded-md px-2 py-2 no-underline transition-colors duration-150 hover:bg-surface-2/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+    >
+      <span className="grid h-8 w-8 flex-shrink-0 place-items-center rounded-full bg-surface-2 text-text-dim">{icone}</span>
+      <span className="min-w-0">
+        <span className="block text-xs text-text-faint">{rotulo}</span>
+        <span className="block truncate text-sm font-medium text-text">{valor}</span>
+      </span>
+    </a>
+  );
+}
+
+/**
+ * Contato logo no topo, para ninguém precisar rolar até o fim: QR do WhatsApp
+ * e os links, lado a lado no celular e empilhados na coluna do desktop.
+ */
+function CartaoContato() {
+  const c = useConteudo();
+  return (
+    <aside className="rounded-lg border border-border bg-surface p-5 shadow-card">
+      <p className="m-0 text-xs font-medium uppercase tracking-[0.08em] text-text-faint">{c.rotulos.faleComigo}</p>
+      <div className="mt-4 flex flex-col gap-5 sm:flex-row sm:items-center lg:flex-col lg:items-stretch">
+        <figure className="m-0 flex flex-shrink-0 flex-col items-center gap-2">
+          <img
+            src={PERFIL.qrWhatsapp}
+            alt={`QR Code WhatsApp · ${PERFIL.nome}`}
+            width={160}
+            height={160}
+            className="h-40 w-40 rounded-md border border-border bg-white p-2"
+          />
+          <figcaption className="max-w-44 text-center text-xs leading-4 text-text-faint">{c.rotulos.qrWhatsapp}</figcaption>
+        </figure>
+        <div className="flex min-w-0 flex-1 flex-col gap-0.5 lg:border-t lg:border-border lg:pt-3">
+          <LinhaContato href={`mailto:${PERFIL.email}`} icone={<Mail size={15} strokeWidth={2} />} rotulo="E-mail" valor={PERFIL.email} />
+          <LinhaContato href={PERFIL.linkedin} icone={<Linkedin size={15} strokeWidth={2} />} rotulo="LinkedIn" valor="in/pericles-messias" />
+          <LinhaContato href={PERFIL.github} icone={<Github size={15} strokeWidth={2} />} rotulo="GitHub" valor="periclesrmessias" />
+        </div>
+      </div>
+    </aside>
+  );
+}
+
 export function VisaoGeral() {
   const c = useConteudo();
 
@@ -46,7 +94,8 @@ export function VisaoGeral() {
       <div className="relative">
         <div className="malha pointer-events-none absolute -inset-x-10 -top-16 h-72" aria-hidden="true" />
 
-        <div className="relative">
+        <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-12 xl:grid-cols-[minmax(0,1fr)_360px]">
+          <div className="min-w-0">
           <Revelar>
             <div className="mb-5 flex items-center gap-4">
               <Foto />
@@ -64,7 +113,7 @@ export function VisaoGeral() {
           </Revelar>
 
           <Revelar atraso={120}>
-            <p className="m-0 mt-4 max-w-2xl text-base leading-7 text-text-dim md:text-lg">{c.resumo}</p>
+            <p className="m-0 mt-4 max-w-3xl text-base leading-7 text-text-dim md:text-lg">{c.resumo}</p>
           </Revelar>
 
           <Revelar atraso={180}>
@@ -85,13 +134,15 @@ export function VisaoGeral() {
               <LinkButton href="#projetos" icone={<ArrowDown size={16} strokeWidth={2.2} />}>
                 {c.rotulos.verProjetos}
               </LinkButton>
-              <LinkButton href={PERFIL.linkedin} variante="secundario" icone={<Linkedin size={16} strokeWidth={2} />}>
-                LinkedIn
-              </LinkButton>
-              <LinkButton href={PERFIL.github} variante="secundario" icone={<Github size={16} strokeWidth={2} />}>
-                GitHub
+              <LinkButton href={`mailto:${PERFIL.email}`} variante="secundario" icone={<Mail size={16} strokeWidth={2} />}>
+                {c.rotulos.enviarEmail}
               </LinkButton>
             </div>
+          </Revelar>
+          </div>
+
+          <Revelar atraso={120}>
+            <CartaoContato />
           </Revelar>
         </div>
       </div>

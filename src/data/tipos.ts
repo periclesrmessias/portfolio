@@ -97,6 +97,7 @@ export interface Rotulos {
   emDesenvolvimentoApoio: string;
   enviarEmail: string;
   qrWhatsapp: string;
+  faleComigo: string;
   tema: string;
   idioma: string;
   pularParaConteudo: string;

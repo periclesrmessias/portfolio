@@ -108,6 +108,9 @@ export function Trajetoria() {
         <SectionHeader eyebrow={c.trajetoria.eyebrow} titulo={c.trajetoria.titulo} apoio={c.trajetoria.apoio} />
       </Revelar>
 
+      {/* No desktop largo a linha do tempo vira coluna lateral fixa, ao lado dos
+          cargos, em vez de esticar a página para baixo. */}
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_300px] xl:items-start">
       <div className="flex flex-col gap-5">
         {c.experiencias.map((exp, i) => (
           // A chave inclui o idioma para o acordeão remontar na troca, em vez de
@@ -118,8 +121,8 @@ export function Trajetoria() {
         ))}
       </div>
 
-      <Revelar atraso={120}>
-        <Card className="mt-5 p-5 md:p-6">
+      <Revelar atraso={120} className="xl:sticky xl:top-8">
+        <Card className="p-5 md:p-6">
           <p className="m-0 mb-5 text-xs font-semibold uppercase tracking-[0.08em] text-text-faint">{c.rotulos.linhaDoTempo}</p>
           <ol className="relative m-0 list-none p-0">
             {/* Trilho contínuo atrás dos marcadores. */}
@@ -143,6 +146,7 @@ export function Trajetoria() {
           </ol>
         </Card>
       </Revelar>
+      </div>
     </section>
   );
 }

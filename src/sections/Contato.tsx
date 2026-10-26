@@ -11,7 +11,7 @@ export function Contato() {
       <Revelar>
         <div className="relative overflow-hidden rounded-lg border border-border bg-surface p-7 shadow-card md:p-10">
           <div className="malha pointer-events-none absolute inset-x-0 -top-8 h-48" aria-hidden="true" />
-          <div className="relative flex flex-col-reverse gap-8 md:flex-row-reverse md:items-start md:justify-end">
+          <div className="relative">
             <div>
               <p className="m-0 mb-1.5 text-xs font-medium uppercase tracking-[0.08em] text-text-faint">{c.contato.eyebrow}</p>
               <h2 className="m-0 max-w-xl text-2xl font-semibold leading-tight text-text md:text-3xl">{c.contato.titulo}</h2>
@@ -28,16 +28,6 @@ export function Contato() {
                 </LinkButton>
               </div>
             </div>
-            <figure className="m-0 flex flex-shrink-0 flex-col items-center gap-2 md:items-center">
-              <img
-                src={PERFIL.qrWhatsapp}
-                alt={c.rotulos.qrWhatsapp}
-                width={160}
-                height={160}
-                className="h-40 w-40 rounded-md border border-border bg-white p-2 shadow-card"
-              />
-              <figcaption className="max-w-40 text-center text-xs leading-4 text-text-faint">{c.rotulos.qrWhatsapp}</figcaption>
-            </figure>
           </div>
         </div>
       </Revelar>
