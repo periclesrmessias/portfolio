@@ -11,6 +11,8 @@ export const PERFIL = {
   linkedin: "https://www.linkedin.com/in/pericles-messias/",
   /** Foto em `public/`; sai da tela sozinha se o arquivo não existir. */
   foto: "foto.jpg",
+  /** QR Code do WhatsApp em `public/`. */
+  qrWhatsapp: "qr-whatsapp.png",
 } as const;
 
 /** Cor de cada eixo. O rótulo vem dos `rotulos.eixos` do idioma ativo. */

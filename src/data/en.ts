@@ -444,6 +444,7 @@ export const EN: Conteudo = {
     emDesenvolvimento: "Currently learning",
     emDesenvolvimentoApoio: "What I don't master yet, stated on purpose: more useful in an interview than discovering it halfway through.",
     enviarEmail: "Send e-mail",
+    qrWhatsapp: "Scan to message me on WhatsApp",
     tema: "Theme",
     idioma: "Language",
     pularParaConteudo: "Skip to content",

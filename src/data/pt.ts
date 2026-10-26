@@ -444,6 +444,7 @@ export const PT: Conteudo = {
     emDesenvolvimento: "Em desenvolvimento",
     emDesenvolvimentoApoio: "O que ainda não domino, declarado de propósito: é mais útil numa entrevista do que descobrir no meio dela.",
     enviarEmail: "Enviar e-mail",
+    qrWhatsapp: "Escaneie para falar comigo no WhatsApp",
     tema: "Tema",
     idioma: "Idioma",
     pularParaConteudo: "Pular para o conteúdo",
