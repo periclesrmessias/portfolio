@@ -311,6 +311,7 @@ export const PT: Conteudo = {
         ],
         stack: ["React", "TypeScript", "Tailwind", "Supabase", "Vite"],
         eixos: ["engenharia", "dados"],
+        destaque: true,
         video: {
           src: "projetos/lifeos-video.mp4",
           poster: "projetos/lifeos-video-poster.jpg",
@@ -443,6 +444,7 @@ export const PT: Conteudo = {
     mostrarEntregas: (n) => `O que eu fiz (${n})`,
     ocultarEntregas: "Esconder",
     filtrarProjetos: "Filtrar projetos por eixo",
+    projetoDestaque: "Projeto em destaque",
     todos: "Todos",
     linhaDoTempo: "Linha do tempo",
     emCurso: "Em curso",

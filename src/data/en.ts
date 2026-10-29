@@ -312,6 +312,7 @@ export const EN: Conteudo = {
         ],
         stack: ["React", "TypeScript", "Tailwind", "Supabase", "Vite"],
         eixos: ["engenharia", "dados"],
+        destaque: true,
         video: {
           src: "projetos/lifeos-video.mp4",
           poster: "projetos/lifeos-video-poster.jpg",
@@ -444,6 +445,7 @@ export const EN: Conteudo = {
     mostrarEntregas: (n) => `What I did (${n})`,
     ocultarEntregas: "Hide",
     filtrarProjetos: "Filter projects by area",
+    projetoDestaque: "Featured project",
     todos: "All",
     linhaDoTempo: "Timeline",
     emCurso: "In progress",

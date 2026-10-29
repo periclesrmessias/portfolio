@@ -65,6 +65,8 @@ export interface Projeto {
   video?: Video;
   /** Capturas do projeto, na ordem em que aparecem no cartão. */
   imagens?: Imagem[];
+  /** Ocupa a largura toda acima da grade, com o vídeo ao lado do texto. */
+  destaque?: boolean;
 }
 
 export interface GrupoStack {
@@ -103,6 +105,7 @@ export interface Rotulos {
   mostrarEntregas: (n: number) => string;
   ocultarEntregas: string;
   filtrarProjetos: string;
+  projetoDestaque: string;
   todos: string;
   linhaDoTempo: string;
   emCurso: string;
