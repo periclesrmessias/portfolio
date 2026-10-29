@@ -301,7 +301,7 @@ export const PT: Conteudo = {
         titulo: "Life-OS",
         natureza: "Projeto pessoal",
         resumo:
-          "App que eu fiz para acompanhar hábitos, humor, finanças e carreira, em React, TypeScript, Tailwind e Supabase, com os painéis de estatística feitos do zero.",
+          "App que eu fiz para acompanhar a vida num lugar só: rotina (metas, agenda, lembretes e notas), corpo e mente (hábitos, humor e saúde), carreira e dinheiro (finanças e estudos), lazer (séries, filmes, livros e lugares para visitar) e casa (assinaturas, manutenções e documentos). Feito em React, TypeScript, Tailwind e Supabase, com os painéis de estatística feitos do zero.",
         destaques: [
           "Supabase/PostgreSQL com autenticação e row-level security.",
           "Gráficos em SVG feitos na mão (linha, barra, funil, heatmap), sem biblioteca de gráficos.",

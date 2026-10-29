@@ -302,7 +302,7 @@ export const EN: Conteudo = {
         titulo: "Life-OS",
         natureza: "Personal project",
         resumo:
-          "An app I built to track habits, mood, finances and career, in React, TypeScript, Tailwind and Supabase, with the stats dashboards made from scratch.",
+          "An app I built to track my life in one place: routine (goals, calendar, reminders and notes), body and mind (habits, mood and health), career and money (finances and studies), leisure (series, movies, books and places to visit) and home (subscriptions, maintenance and documents). Built in React, TypeScript, Tailwind and Supabase, with the stats dashboards made from scratch.",
         destaques: [
           "Supabase/PostgreSQL with authentication and row-level security.",
           "Hand-made SVG charts (line, bar, funnel, heatmap), no charting library.",
