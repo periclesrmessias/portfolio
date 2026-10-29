@@ -231,6 +231,28 @@ export function Figura({ src, alt, legenda, className }: { src: string; alt: str
 }
 
 /**
+ * Vídeo com a mesma moldura da `Figura`. Só baixa o arquivo quando a pessoa
+ * aperta o play (`preload="none"`), para não pesar no carregamento da página;
+ * até lá aparece o pôster.
+ */
+export function FiguraVideo({ src, poster, alt, legenda, className }: { src: string; poster: string; alt: string; legenda: string; className?: string }) {
+  return (
+    <figure className={cn("m-0 mt-4 overflow-hidden rounded-md border border-border bg-surface-2", className)}>
+      <video
+        src={src}
+        poster={poster}
+        controls
+        playsInline
+        preload="none"
+        aria-label={alt}
+        className="block aspect-square h-auto w-full bg-black"
+      />
+      <figcaption className="border-t border-border px-3 py-2 text-xs leading-5 text-text-faint">{legenda}</figcaption>
+    </figure>
+  );
+}
+
+/**
  * Imagem em tela cheia. Abre ajustada à janela; um clique na imagem alterna
  * para o tamanho original, com rolagem, para ler texto pequeno. Fecha no Esc,
  * no botão ou no clique fora da imagem, e trava a rolagem da página enquanto

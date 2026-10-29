@@ -311,6 +311,12 @@ export const PT: Conteudo = {
         ],
         stack: ["React", "TypeScript", "Tailwind", "Supabase", "Vite"],
         eixos: ["engenharia", "dados"],
+        video: {
+          src: "projetos/lifeos-video.mp4",
+          poster: "projetos/lifeos-video-poster.jpg",
+          alt: "Vídeo de apresentação do Life-OS: telas de início, hábitos, finanças e estatísticas, e as decisões por trás das métricas de aderência, comparação e projeção.",
+          legenda: "Apresentação em 1min26s, narrada em inglês e com legendas. Dados de demonstração fictícios.",
+        },
         imagens: [
           {
             src: "projetos/lifeos-habitos.png",

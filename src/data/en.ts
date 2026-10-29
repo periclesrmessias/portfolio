@@ -312,6 +312,12 @@ export const EN: Conteudo = {
         ],
         stack: ["React", "TypeScript", "Tailwind", "Supabase", "Vite"],
         eixos: ["engenharia", "dados"],
+        video: {
+          src: "projetos/lifeos-video.mp4",
+          poster: "projetos/lifeos-video-poster.jpg",
+          alt: "Life-OS walkthrough video: home, habits, finances and statistics screens, and the decisions behind the adherence, comparison and forecast metrics.",
+          legenda: "1:26 walkthrough, narrated and captioned. Demo data is fictional.",
+        },
         imagens: [
           {
             src: "projetos/lifeos-habitos.png",

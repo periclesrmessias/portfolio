@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Info } from "lucide-react";
-import { Card, Chip, Figura, Revelar, SectionHeader } from "@/components/ui";
+import { Card, Chip, Figura, FiguraVideo, Revelar, SectionHeader } from "@/components/ui";
 import { useConteudo } from "@/utils/idioma";
 import { cn } from "@/utils/cn";
 import type { Eixo, Projeto } from "@/data/tipos";
@@ -18,6 +18,8 @@ function CartaoProjeto({ projeto, corporativo }: { projeto: Projeto; corporativo
 
       <h3 className="m-0 mt-3 text-lg font-semibold leading-snug text-text">{projeto.titulo}</h3>
       <p className="m-0 mt-2 text-sm leading-6 text-text-dim">{projeto.resumo}</p>
+
+      {projeto.video && <FiguraVideo {...projeto.video} />}
 
       {projeto.imagens && projeto.imagens.length > 0 && (
         // Fotos em pé ficam lado a lado; capturas de tela, uma sob a outra.

@@ -19,6 +19,17 @@ export interface Imagem {
   retrato?: boolean;
 }
 
+export interface Video {
+  /** Caminho relativo dentro de `public/`, sem barra inicial. */
+  src: string;
+  /** Quadro mostrado antes do play, também relativo a `public/`. */
+  poster: string;
+  /** Descrição para leitor de tela. */
+  alt: string;
+  /** Legenda curta sob o vídeo. */
+  legenda: string;
+}
+
 export interface Kpi {
   label: string;
   valor: string;
@@ -50,6 +61,8 @@ export interface Projeto {
   eixos: Eixo[];
   /** Observação honesta sobre limite, escopo ou descontinuação. */
   ressalva?: string;
+  /** Vídeo de apresentação, mostrado antes das capturas. */
+  video?: Video;
   /** Capturas do projeto, na ordem em que aparecem no cartão. */
   imagens?: Imagem[];
 }
