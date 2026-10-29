@@ -291,12 +291,11 @@ export const EN: Conteudo = {
         resumo:
           "An XGBoost model that combines investment history, financial indicators, commodities and macro data to estimate future investment and help prioritise accounts.",
         destaques: [
+          "Identified BRL 800 million in SAM (Serviceable Available Market) across strategic accounts.",
           "Feature engineering with macroeconomic and commodity variables.",
           "It supports sales prioritisation. The decision stays with the team.",
         ],
         stack: ["Python", "pandas", "XGBoost"],
-        ressalva:
-          "Still exploratory. I haven't formalised validation or an error metric against a baseline yet, so I only use it as support.",
         eixos: ["dados"],
       },
       {

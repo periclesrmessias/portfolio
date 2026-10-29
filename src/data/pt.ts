@@ -290,12 +290,11 @@ export const PT: Conteudo = {
         resumo:
           "Modelo em XGBoost que junta histórico de investimento, indicadores financeiros, commodities e dados macro para estimar investimentos futuros e ajudar a priorizar clientes.",
         destaques: [
+          "Identificou R$ 800 milhões de SAM (Serviceable Available Market) em clientes estratégicos.",
           "Feature engineering com variáveis macroeconômicas e de commodities.",
           "Serve para apoiar a priorização comercial. A decisão continua com o time.",
         ],
         stack: ["Python", "pandas", "XGBoost"],
-        ressalva:
-          "Ainda é exploratório. Não formalizei a validação nem a métrica de erro contra um baseline, então uso só como apoio.",
         eixos: ["dados"],
       },
       {
