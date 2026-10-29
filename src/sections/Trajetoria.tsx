@@ -18,11 +18,12 @@ function MarcaEixo({ eixo, rotulo }: { eixo: Eixo; rotulo: string }) {
 
 /**
  * Um cargo. Resultados primeiro, porque é por eles que o currículo é lido; as
- * entregas ficam atrás de um acordeão para a seção não virar um muro de texto , 
- * mas continuam no DOM, acessíveis e indexáveis.
+ * entregas ficam atrás de um acordeão, sempre fechado de início, para a seção
+ * não virar um muro de texto; quem quiser ler abre. Continuam no DOM,
+ * acessíveis e indexáveis.
  */
-function CartaoExperiencia({ exp, inicial, rotulos }: { exp: Experiencia; inicial: boolean; rotulos: Conteudo["rotulos"] }) {
-  const [aberto, definirAberto] = useState(inicial);
+function CartaoExperiencia({ exp, rotulos }: { exp: Experiencia; rotulos: Conteudo["rotulos"] }) {
+  const [aberto, definirAberto] = useState(false);
   const idPainel = `entregas-${exp.empresa.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
@@ -116,7 +117,7 @@ export function Trajetoria() {
           // A chave inclui o idioma para o acordeão remontar na troca, em vez de
           // manter aberto um painel cujo rótulo acabou de mudar de língua.
           <Revelar key={`${c.idioma}-${exp.empresa}`} atraso={i * 70}>
-            <CartaoExperiencia exp={exp} inicial={i === 0} rotulos={c.rotulos} />
+            <CartaoExperiencia exp={exp} rotulos={c.rotulos} />
           </Revelar>
         ))}
       </div>

@@ -9,7 +9,7 @@ export const PT: Conteudo = {
   lang: "pt-BR",
   manchete: "Trabalho com dados, BI e inteligência de mercado.",
   resumo:
-    "Tenho mais de 5 anos de experiência com análise de dados, BI, inteligência de mercado e automação com IA. Hoje estou na Superus Engenharia cuidando dos dados de um funil comercial de R$ 3,5 bilhões. Escrevo o SQL em cima do CRM, monto os dashboards e entrego os relatórios que a diretoria usa para decidir onde focar.",
+    "Tenho mais de 5 anos de experiência com análise de dados e também trabalho com BI, inteligência de mercado e automação com IA. Hoje estou na Superus Engenharia cuidando dos dados de um funil comercial de R$ 3,5 bilhões. Escrevo o SQL em cima do CRM, monto os dashboards e entrego os relatórios que a diretoria usa para decidir onde focar.",
   cargo: "Analista de Dados e Inteligência de Mercado",
   areasFoco: ["Analista de Dados", "Analista de BI", "Analytics Engineer", "Inteligência de Mercado"],
 
@@ -19,7 +19,7 @@ export const PT: Conteudo = {
       valor: "R$ 3,5",
       sufixo: "bi+",
       contexto: "Negociações do time comercial da Superus",
-      nota: "Soma das oportunidades em aberto na carteira comercial que eu acompanho.",
+      nota: "Soma das oportunidades em aberto na carteira comercial que acompanho.",
     },
     {
       label: "Nova unidade de negócio",
@@ -39,13 +39,13 @@ export const PT: Conteudo = {
       label: "Busca de contatos",
       valor: "2h → 5min",
       contexto: "Automação Claude + Apollo.io, usada pelo Comercial e pelo RH",
-      nota: "Antes eu levava umas 2 horas para mapear os contatos de uma conta na mão. Depois que integrei a API do Claude com a do Apollo.io, caiu para uns 5 minutos.",
+      nota: "Antes levava umas 2 horas para mapear os contatos de uma conta na mão. Depois que integrei a API do Claude com a do Apollo.io, caiu para uns 5 minutos.",
     },
   ],
 
   trajetoria: {
     eyebrow: "Trajetória",
-    titulo: "Por onde eu passei",
+    titulo: "Por onde passei",
     apoio: "Comecei com operações e pricing numa clínica, fui para análise comercial no varejo e hoje trabalho com dados e inteligência de mercado numa empresa de engenharia.",
   },
 
@@ -109,7 +109,7 @@ export const PT: Conteudo = {
       cargo: "Analista de Pricing e Dados",
       empresa: "Moro e Messias",
       periodo: "out/2020 a dez/2023",
-      contexto: "Clínica de dermatologia com quatro pessoas. Eu fazia um pouco de tudo, de operações e pricing a dados e controle financeiro.",
+      contexto: "Clínica de dermatologia com quatro pessoas. Fazia um pouco de tudo, de operações e pricing a dados e controle financeiro.",
       entregas: [
         "Acompanhava os preços de fornecedores e concorrentes em mais de 50 produtos para definir nossos preços.",
         "Controlava o estoque de insumos com indicadores de consumo e custo.",
@@ -139,7 +139,7 @@ export const PT: Conteudo = {
 
   projetos: {
     eyebrow: "Projetos",
-    titulo: "Algumas coisas que eu fiz",
+    titulo: "Algumas coisas que fiz",
     apoio: "Separei entre projetos de empresa, case técnico e projetos pessoais. Quando tem alguma limitação, deixei escrito. Dá para clicar nas imagens para ampliar.",
     itens: [
       {
@@ -238,6 +238,20 @@ export const PT: Conteudo = {
         ],
       },
       {
+        titulo: "Modelo preditivo de CAPEX",
+        natureza: "Projeto corporativo",
+        org: "Superus Engenharia",
+        resumo:
+          "Modelo em XGBoost que junta histórico de investimento, indicadores financeiros, commodities e dados macro para estimar investimentos futuros e ajudar a priorizar clientes.",
+        destaques: [
+          "Identificou R$ 800 milhões de SAM (Serviceable Available Market) em clientes estratégicos.",
+          "Feature engineering com variáveis macroeconômicas e de commodities.",
+          "Serve para apoiar a priorização comercial. A decisão continua com o time.",
+        ],
+        stack: ["Python", "pandas", "XGBoost"],
+        eixos: ["dados"],
+      },
+      {
         titulo: "Weather Data Pipeline",
         natureza: "Projeto corporativo",
         org: "ASAP Facilities",
@@ -251,7 +265,7 @@ export const PT: Conteudo = {
         ],
         stack: ["Apache Airflow", "Python", "Azure", "APIs REST"],
         ressalva:
-          "A operação usou por um tempo, mas foi descontinuado porque não tinha estrutura para manter (manutenção, infraestrutura e custo da API). Mesmo assim, foi onde eu passei pelo ciclo completo de ingestão, orquestração, observabilidade e manutenção em produção.",
+          "Foi descontinuado porque não tinha estrutura para manter (manutenção, infraestrutura e custo da API). Mesmo assim, foi onde passei pelo ciclo completo de ingestão, orquestração, observabilidade e manutenção em produção.",
         eixos: ["engenharia"],
         imagens: [
           {
@@ -274,7 +288,6 @@ export const PT: Conteudo = {
           "Monitoramento de drift, recalibrando se a aprovação variar ±1% ou o chargeback passar de 0,60%.",
         ],
         stack: ["Python", "pandas", "NumPy", "SciPy", "Matplotlib"],
-        ressalva: "Os critérios de monitoramento são hipóteses que eu defini no próprio case, sem validação externa.",
         eixos: ["dados", "negocio"],
         imagens: [
           {
@@ -285,23 +298,10 @@ export const PT: Conteudo = {
         ],
       },
       {
-        titulo: "Modelo preditivo de CAPEX",
-        natureza: "Projeto pessoal",
-        resumo:
-          "Modelo em XGBoost que junta histórico de investimento, indicadores financeiros, commodities e dados macro para estimar investimentos futuros e ajudar a priorizar clientes.",
-        destaques: [
-          "Identificou R$ 800 milhões de SAM (Serviceable Available Market) em clientes estratégicos.",
-          "Feature engineering com variáveis macroeconômicas e de commodities.",
-          "Serve para apoiar a priorização comercial. A decisão continua com o time.",
-        ],
-        stack: ["Python", "pandas", "XGBoost"],
-        eixos: ["dados"],
-      },
-      {
         titulo: "Life-OS",
         natureza: "Projeto pessoal",
         resumo:
-          "App que eu fiz para acompanhar a vida num lugar só: rotina (metas, agenda, lembretes e notas), corpo e mente (hábitos, humor e saúde), carreira e dinheiro (finanças e estudos), lazer (séries, filmes, livros e lugares para visitar) e casa (assinaturas, manutenções e documentos). Feito em React, TypeScript, Tailwind e Supabase, com os painéis de estatística feitos do zero.",
+          "App que fiz para acompanhar a vida num lugar só: rotina (metas, agenda, lembretes e notas), corpo e mente (hábitos, humor e saúde), carreira e dinheiro (finanças e estudos), lazer (séries, filmes, livros e lugares para visitar) e casa (assinaturas, manutenções e documentos). Feito em React, TypeScript, Tailwind e Supabase, com os painéis de estatística feitos do zero.",
         destaques: [
           "Supabase/PostgreSQL com autenticação e row-level security.",
           "Gráficos em SVG feitos na mão (linha, barra, funil, heatmap), sem biblioteca de gráficos.",
@@ -335,8 +335,8 @@ export const PT: Conteudo = {
 
   stack: {
     eyebrow: "Stack",
-    titulo: "Ferramentas que eu uso no dia a dia",
-    apoio: "Separei pelos três eixos em que eu trabalho.",
+    titulo: "Ferramentas que uso no dia a dia",
+    apoio: "Separei pelos três eixos em que trabalho.",
     grupos: [
       {
         titulo: "BI e visualização",
@@ -440,7 +440,7 @@ export const PT: Conteudo = {
     formacaoEmCurso: "Cursando Tecnólogo em Ciência de Dados",
     atual: "Atual",
     resultados: "Resultados",
-    mostrarEntregas: (n) => `O que eu fiz (${n})`,
+    mostrarEntregas: (n) => `O que fiz (${n})`,
     ocultarEntregas: "Esconder",
     filtrarProjetos: "Filtrar projetos por eixo",
     projetoDestaque: "Projeto em destaque",
@@ -448,7 +448,7 @@ export const PT: Conteudo = {
     linhaDoTempo: "Linha do tempo",
     emCurso: "Em curso",
     emDesenvolvimento: "Estudando agora",
-    emDesenvolvimentoApoio: "Coisas que eu ainda não domino e estou estudando.",
+    emDesenvolvimentoApoio: "Coisas que ainda não domino e estou estudando.",
     enviarEmail: "Enviar e-mail",
     qrWhatsapp: "Aponte a câmera para falar comigo no WhatsApp",
     faleComigo: "Fale comigo",

@@ -10,7 +10,7 @@ export const EN: Conteudo = {
   lang: "en",
   manchete: "I work with data, BI and market intelligence.",
   resumo:
-    "I have 5+ years of experience in data analysis, BI, market intelligence and AI automation. Right now I'm at Superus Engenharia, looking after the data behind a BRL 3.5 billion sales pipeline. I write the SQL on top of the CRM, build the dashboards and deliver the reports leadership uses to decide where to focus.",
+    "I have 5+ years of experience in data analysis, and I also work with BI, market intelligence and AI automation. Right now I'm at Superus Engenharia, looking after the data behind a BRL 3.5 billion sales pipeline. I write the SQL on top of the CRM, build the dashboards and deliver the reports leadership uses to decide where to focus.",
   cargo: "Data & Market Intelligence Analyst",
   areasFoco: ["Data Analyst", "BI Analyst", "Analytics Engineer", "Market Intelligence"],
 
@@ -239,6 +239,20 @@ export const EN: Conteudo = {
         ],
       },
       {
+        titulo: "CAPEX forecasting model",
+        natureza: "Corporate project",
+        org: "Superus Engenharia",
+        resumo:
+          "An XGBoost model that combines investment history, financial indicators, commodities and macro data to estimate future investment and help prioritise accounts.",
+        destaques: [
+          "Identified BRL 800 million in SAM (Serviceable Available Market) across strategic accounts.",
+          "Feature engineering with macroeconomic and commodity variables.",
+          "It supports sales prioritisation. The decision stays with the team.",
+        ],
+        stack: ["Python", "pandas", "XGBoost"],
+        eixos: ["dados"],
+      },
+      {
         titulo: "Weather Data Pipeline",
         natureza: "Corporate project",
         org: "ASAP Facilities",
@@ -252,7 +266,7 @@ export const EN: Conteudo = {
         ],
         stack: ["Apache Airflow", "Python", "Azure", "REST APIs"],
         ressalva:
-          "Operations used it for a while, but it was shut down because there wasn't a structure to keep it running (maintenance, infrastructure and API cost). Still, it's where I went through the full cycle of ingestion, orchestration, observability and running something in production.",
+          "It was shut down because there wasn't a structure to keep it running (maintenance, infrastructure and API cost). Still, it's where I went through the full cycle of ingestion, orchestration, observability and running something in production.",
         eixos: ["engenharia"],
         imagens: [
           {
@@ -275,7 +289,6 @@ export const EN: Conteudo = {
           "Drift monitoring, recalibrating if approval moves ±1% or chargeback goes above 0.60%.",
         ],
         stack: ["Python", "pandas", "NumPy", "SciPy", "Matplotlib"],
-        ressalva: "The monitoring criteria are assumptions I set within the case itself, with no external validation.",
         eixos: ["dados", "negocio"],
         imagens: [
           {
@@ -284,19 +297,6 @@ export const EN: Conteudo = {
             legenda: "Score distribution and left tail, with the approval cut-off at 0.8608.",
           },
         ],
-      },
-      {
-        titulo: "CAPEX forecasting model",
-        natureza: "Personal project",
-        resumo:
-          "An XGBoost model that combines investment history, financial indicators, commodities and macro data to estimate future investment and help prioritise accounts.",
-        destaques: [
-          "Identified BRL 800 million in SAM (Serviceable Available Market) across strategic accounts.",
-          "Feature engineering with macroeconomic and commodity variables.",
-          "It supports sales prioritisation. The decision stays with the team.",
-        ],
-        stack: ["Python", "pandas", "XGBoost"],
-        eixos: ["dados"],
       },
       {
         titulo: "Life-OS",
